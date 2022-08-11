@@ -3,7 +3,7 @@ import './HomeSingleItem.css';
 
 const HomeSingleItem = (singleItem) => {
   const { data } = singleItem
-  const { title, thumbnail, year, genre, pic, description, release_date, publisher, short_description } = data
+  const { title, thumbnail, release_date, publisher, short_description } = data
 
   const [showPopUp, setShowPopUp] = useState(false)
 
