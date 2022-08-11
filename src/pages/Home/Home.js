@@ -49,7 +49,7 @@ const HomeContainer = () => {
                 <div className='HomeDynamicTitle'>dynamic title</div>
                 <div onClick={() => { pagination(false) }}>botton left example</div>
                 <div onClick={() => { pagination(true) }}>botton right example</div>
-                <div>{indexRef.current}</div>
+                <div>{indexRef.current}-{indexRef.current + totalLength - indexRef.current}</div>
                 <div className='HomeContainerGrid'>
                     {gamesArray.length > 0 && <div
                         className={'HomeInnerGrid'}>
