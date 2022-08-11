@@ -4,6 +4,13 @@ import './HomeSingleItem.css';
 const HomeSingleItem = (singleItem) => {
   const { data } = singleItem
   const { title, thumbnail, release_date, publisher, short_description } = data
+  let shortenedTitle = title.substring(0, 16)
+  shortenedTitle = title.length >= 16 ? shortenedTitle + '...' : shortenedTitle
+
+  let shortenedPublisher = title.substring(0, 16)
+  shortenedPublisher = publisher.length >= 16 ? shortenedPublisher + '...' : shortenedPublisher
+
+
 
   const [showPopUp, setShowPopUp] = useState(false)
 
@@ -20,13 +27,13 @@ const HomeSingleItem = (singleItem) => {
       <div
         className='vertFlex itemDetailsContainer'>
         <div className='itemTitleMore'>
-          {title}
+          {shortenedTitle}
         </div>
         <div>
           {release_date}
         </div>
         <div>
-          {publisher}
+          {shortenedPublisher}
         </div>
       </div>
       {showPopUp && (
