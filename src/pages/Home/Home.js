@@ -26,10 +26,16 @@ const HomeContainer = () => {
 
 
     const gamesArray = useSelector((state) => state.gameSlice.homeGamesArray)
+    const totalLength = useSelector((state) => state.gameSlice.homeGamesArrayTotalLength)
+
 
     const pagination = (operator) => {
         let current = operator ? indexRef.current + 8 : indexRef.current - 8
+        //check if it will return empty array because of max .
         current = current < 0 ? 0 : current;
+        if (current === indexRef.current || current > totalLength) {// this condition being true means that the user tried to go over the boindsrirs of the result array. no need to dispatch in that case, so there is a return as not to waste compuation on unnesecarry dispatch
+            return
+        }
 
         indexRef.current = current; dispatch(getAllGames([getAllGamesOptions, { indexStart: current }]))
     }
