@@ -27,6 +27,12 @@ const HomeContainer = () => {
 
     const gamesArray = useSelector((state) => state.gameSlice.homeGamesArray)
 
+    const pagination = (operator) => {
+        let current = operator ? indexRef.current + 8 : indexRef.current - 8
+        current = current < 0 ? 0 : current;
+
+        indexRef.current = current; dispatch(getAllGames([getAllGamesOptions, { indexStart: current }]))
+    }
 
 
 
@@ -35,6 +41,9 @@ const HomeContainer = () => {
         <div className='HomeContainer'>
             <div className='HomeInnerContainer'>
                 <div className='HomeDynamicTitle'>dynamic title</div>
+                <div onClick={() => { pagination(false) }}>botton left example</div>
+                <div onClick={() => { pagination(true) }}>botton right example</div>
+                <div>{indexRef.current}</div>
                 <div className='HomeContainerGrid'>
                     {gamesArray.length > 0 && <div
                         className={'HomeInnerGrid'}>

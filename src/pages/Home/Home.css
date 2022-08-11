@@ -5,7 +5,6 @@
   flex-direction: column;
   opacity: 1;
   transition: opacity 1s;
-
   animation: fade 1.7s linear 0s 1 forwards;
 }
 
