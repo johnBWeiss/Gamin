@@ -4,11 +4,12 @@ import './HomeSingleItem.css';
 const HomeSingleItem = (singleItem) => {
   const { data } = singleItem
   const { title, thumbnail, release_date, publisher, short_description } = data
-  let shortenedTitle = title.substring(0, 16)
-  shortenedTitle = title.length >= 16 ? shortenedTitle + '...' : shortenedTitle
 
-  let shortenedPublisher = title.substring(0, 16)
-  shortenedPublisher = publisher.length >= 16 ? shortenedPublisher + '...' : shortenedPublisher
+  let shortenedTitle = title?.substring(0, 20) ?? ''
+  shortenedTitle = title?.length >= 20 ? shortenedTitle + '...' : shortenedTitle
+
+  let shortenedPublisher = publisher?.substring(0, 28) ?? ''
+  shortenedPublisher = publisher?.length >= 28 ? shortenedPublisher + '...' : shortenedPublisher
 
 
 
