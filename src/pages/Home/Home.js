@@ -33,16 +33,18 @@ const HomeContainer = () => {
     return (
 
         <div className='HomeContainer'>
-            <div className='HomeContainerGrid'>
-                {gamesArray.length > 0 && <div
-                    className={'HomeInnerGrid'}>
-                    {gamesArray.map((v, i) => (
-                        <div className='singleItem'>
-                            <HomeSingleItem key={v.id} data={v} />
-                        </div>
-                    ))}
-                </div>}
-            </div>
+            <div className='HomeInnerContainer'>
+                <div className='HomeDynamicTitle'>dynamic title</div>
+                <div className='HomeContainerGrid'>
+                    {gamesArray.length > 0 && <div
+                        className={'HomeInnerGrid'}>
+                        {gamesArray.map((v, i) => (
+                            <div className='singleItem'>
+                                <HomeSingleItem key={v.id} data={v} />
+                            </div>
+                        ))}
+                    </div>}
+                </div></div>
             <SideNav />
 
         </div >

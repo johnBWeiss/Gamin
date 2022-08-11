@@ -1,12 +1,27 @@
 .HomeContainer {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: right;
+  align-items: flex-end;
   flex-direction: column;
   opacity: 1;
   transition: opacity 1s;
-  min-height: calc(100vh - 30px);
+
   animation: fade 1.7s linear 0s 1 forwards;
+}
+
+.HomeInnerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(100vw - 80px);
+  border: 2px solid gold;
+}
+.HomeDynamicTitle {
+  display: flex;
+  align-self: center;
+  font-size: 100px;
+  margin-top: 5%;
 }
 .HomeContainerGrid {
   display: flex;
@@ -18,7 +33,8 @@
 
 .HomeInnerGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 300px);
+  margin-top: -5%;
   grid-gap: 30px 30px;
 }
 
@@ -39,21 +55,66 @@
     opacity: 1;
   }
 }
-@media (max-width: 1220px) {
+
+@media (max-width: 1489px) {
   .HomeInnerGrid {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 300px);
+  }
+}
+@media (max-width: 1166px) {
+  .HomeInnerGrid {
+    grid-template-columns: repeat(2, 400px);
+    grid-gap: 40px 40px;
   }
 }
 
-@media (max-width: 916px) {
+@media (max-width: 1030px) {
   .HomeInnerGrid {
-    grid-template-columns: 1fr 1fr;
-    width: 80%;
+    grid-template-columns: 500px;
+  }
+  .HomeDynamicTitle {
+    font-size: 80px;
   }
 }
 
-@media (max-width: 784px) {
+/* @media (max-width: 784px) {
   .HomeInnerGrid {
     grid-template-columns: 1fr;
+  }
+} */
+
+@media (max-width: 668px) {
+  .HomeInnerGrid {
+    grid-template-columns: 350px;
+  }
+
+  .HomeDynamicTitle {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 528px) {
+  .HomeInnerGrid {
+    grid-template-columns: 300px;
+  }
+}
+
+@media (max-width: 468px) {
+  .HomeInnerGrid {
+    grid-template-columns: 250px;
+  }
+  .HomeDynamicTitle {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 417px) {
+  .HomeInnerGrid {
+    grid-template-columns: 220px;
+  }
+}
+@media (max-width: 370px) {
+  .HomeInnerGrid {
+    grid-template-columns: 200px;
   }
 }
