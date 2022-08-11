@@ -22,7 +22,7 @@ const HomeContainer = () => {
         dispatch(getAllGames([getAllGamesOptions, { indexStart: indexRef.current }]))
         return () => {
         }
-    }, [])
+    }, [dispatch])
 
 
     const gamesArray = useSelector((state) => state.gameSlice.homeGamesArray)
