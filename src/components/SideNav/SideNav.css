@@ -1,0 +1,14 @@
+.SideNavContainer {
+  min-height: 100vh;
+  width: 5%;
+  background-color: black;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.SideNavInnerContainer {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}

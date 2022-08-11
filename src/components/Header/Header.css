@@ -1,0 +1,37 @@
+.headerContainer {
+  display: flex;
+  justify-content: center;
+  height: 90px;
+  font-size: 1.6rem;
+  box-shadow: 0px 3px 6px #00000029;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  flex-shrink: 0;
+  font-family: "BioRhyme", serif;
+}
+.headerInnerWidth {
+  width: 88.75vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.workshopHeader {
+  color: "#6c6e71";
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.workshopHeader:hover {
+  cursor: pointer;
+}
+
+.threeLines {
+  height: 20px;
+}
+.threeLines:hover {
+  cursor: pointer;
+}
+
+.headerLogo {
+  height: 60px;
+  border-radius: 50%;
+}
