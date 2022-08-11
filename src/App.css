@@ -12,7 +12,7 @@ body {
   --sideBarWidth: 80px;
 }
 
-@media (max-width: 468px) {
+@media (max-width: 669px) {
   * {
     --sideBarWidth: 60px;
   }
