@@ -7,3 +7,13 @@ body {
   background-color: rgb(227, 227, 227);
   background-color: #f3f2ef;
 }
+
+* {
+  --sideBarWidth: 80px;
+}
+
+@media (max-width: 468px) {
+  * {
+    --sideBarWidth: 60px;
+  }
+}

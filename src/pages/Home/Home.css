@@ -14,8 +14,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: calc(100vw - 80px);
-  border: 2px solid gold;
+  width: calc(100vw - var(--sideBarWidth));
 }
 .HomeDynamicTitle {
   display: flex;

@@ -1,6 +1,6 @@
 .SideNavContainer {
   min-height: 100%;
-  width: 80px;
+  width: var(--sideBarWidth);
   background-color: black;
   position: fixed;
   left: 0;
