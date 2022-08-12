@@ -1,18 +1,22 @@
 import React from 'react'
 import './SideNav.css'
 import logos from '../../assets/logos/logoController'
-import { gameByCategory } from '../../utils/axiosPaths';
+import { gameByCategory, getAllGamesOptions } from '../../utils/axiosPaths';
 import { changeOptions } from '../../store/gameSlice';
 import { useDispatch } from 'react-redux';
 
 
 export const SideNav = () => {
-    const { shooter, racing, strategy, sports, zombie, martialArts, home } = logos
-    const logoArray = [home, shooter, strategy, racing, sports, zombie, martialArts]
+    const { shooter, racing, strategy, sports, zombie, martialArts, home, controller } = logos
+    const logoArray = [home, controller, shooter, strategy, racing, sports, zombie, martialArts]
 
     const dispatch = useDispatch()
 
     const dispatchCategoryHandler = (v) => {
+        if (v.title === 'All games') {
+            dispatch(changeOptions(getAllGamesOptions))
+
+        }
         dispatch(changeOptions({ ...gameByCategory, params: { category: v.title } }))
     }
     return (

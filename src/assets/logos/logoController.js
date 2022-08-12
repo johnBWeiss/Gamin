@@ -7,6 +7,7 @@ import sports from './logoImages/sports.png'
 import zombie from './logoImages/zombie.png'
 import martialArts from './logoImages/martialArts.png'
 import home from './logoImages/home.png'
+import controller from './logoImages/controller.png'
 
 const logoControllerArray = {
 
@@ -19,6 +20,7 @@ const logoControllerArray = {
     zombie: { src: zombie, title: 'zombie' },
     martialArts: { src: martialArts, title: 'martial-arts' },
     home: { src: home, title: 'home' },
+    controller: { src: controller, title: 'All' },
 }
 
 export default logoControllerArray
