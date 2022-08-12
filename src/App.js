@@ -1,6 +1,6 @@
 import './App.css';
 import Home from './pages/Home/Home';
-import background from './assets/images/backgroundSCIFI.jpg'
+// import background from './assets/images/backgroundSCIFI.jpg'
 import backgroundVid from './assets/images/backgroundVid.mp4'
 
 
