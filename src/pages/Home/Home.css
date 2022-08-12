@@ -142,7 +142,7 @@
     display: flex;
     margin-top: 4%;
     height: 40px;
-    width: 300px;
+    width: 305px;
   }
   .paginateButton {
     height: 40px;
@@ -169,7 +169,7 @@
     font-size: 40px;
   }
   .paginationContainer {
-    width: 250px;
+    width: 255px;
   }
   .indexCurrent {
     font-size: 26px;
@@ -185,10 +185,10 @@
   }
 
   .paginationContainer {
-    width: 220px;
+    width: 225px;
   }
   .indexCurrent {
-    font-size: 24px;
+    font-size: 200px;
   }
 }
 @media (max-width: 370px) {
