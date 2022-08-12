@@ -5,7 +5,7 @@ const HomeSingleItem = (singleItem) => {
   const { data } = singleItem
   const { title, thumbnail, release_date, publisher, short_description } = data
 
-  let shortenedTitle = title?.substring(0, 20) ?? ''
+  let shortenedTitle = title?.substring(0, 16) ?? ''
   shortenedTitle = title?.length >= 20 ? shortenedTitle + '...' : shortenedTitle
 
   let shortenedPublisher = publisher?.substring(0, 28) ?? ''

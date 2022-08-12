@@ -5,8 +5,11 @@ const initialState = {
     error: false,
     errorMessage: '',
     homeGamesArray: [],
-    homeGamesArrayTotalLength: 0
+    homeGamesArrayTotalLength: 0,
+    homeGamesArrayTitle: ''
 };
+
+
 
 export const getAllGames = createAsyncThunk('gameSlice/getAllGames',
 
@@ -48,9 +51,10 @@ export const gameSlice = createSlice({
 
                 state.homeGamesArray = payload.data
                 state.homeGamesArrayTotalLength = payload.dataLength
+                state.homeGamesArrayTitle = 'All Games'
 
 
-                console.log(state.homeGamesArray);
+
             })
 
     },

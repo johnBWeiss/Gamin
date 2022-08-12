@@ -27,8 +27,8 @@ const HomeContainer = () => {
 
     const gamesArray = useSelector((state) => state.gameSlice.homeGamesArray)
     const totalLength = useSelector((state) => state.gameSlice.homeGamesArrayTotalLength)
-    console.log(totalLength);
-    console.log(indexRef.current + 8);
+    const homeTitle = useSelector((state) => state.gameSlice.homeGamesArrayTitle)
+
 
     const pagination = (operator) => {
         let current = operator ? indexRef.current + 8 : indexRef.current - 8
@@ -47,10 +47,9 @@ const HomeContainer = () => {
 
         <div className='HomeContainer'>
             <div className='HomeInnerContainer'>
-                <div className='HomeDynamicTitle'>dynamic title</div>
+                <div className='HomeDynamicTitle'>{homeTitle}</div>
                 <div onClick={() => { pagination(false) }}>botton left example</div>
                 <div onClick={() => { pagination(true) }}>botton right example</div>
-
                 <div>{indexRef.current}-{(totalLength < indexRef.current + 8) ? indexRef.current + totalLength - indexRef.current : indexRef.current + 8}</div>
                 <div className='HomeContainerGrid'>
                     {gamesArray.length > 0 && <div
