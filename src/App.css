@@ -17,7 +17,8 @@ html {
   z-index: -2;
   position: fixed;
   width: 100vw;
-  height: 115vh;
+  height: 100%;
+  min-height: 120vh;
   -o-object-fit: cover;
   object-fit: cover;
   left: 0px;

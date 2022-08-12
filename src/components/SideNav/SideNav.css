@@ -1,5 +1,6 @@
 .SideNavContainer {
-  min-height: 115vh;
+  height: 100%;
+  min-height: 120vh;
   width: var(--sideBarWidth);
   background-image: url("../../assets/images/sideBarBackground.jpg");
   position: fixed;
@@ -32,4 +33,10 @@
   padding-bottom: 8%;
   border-bottom: 4px solid white;
   cursor: pointer;
+}
+
+@media (max-width: 469px) {
+  .SideNavLogo {
+    width: 22px;
+  }
 }
