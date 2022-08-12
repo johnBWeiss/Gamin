@@ -4,8 +4,8 @@
   position: absolute;
   background-color: rgb(57, 4, 4);
   position: fixed;
-  bottom: 12%;
-  left: 8%;
+  top: 0;
+  left: 20px;
   display: flex;
 
   flex-direction: column;
