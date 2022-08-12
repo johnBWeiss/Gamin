@@ -51,29 +51,34 @@
   display: flex;
   margin-top: 4%;
   height: 60px;
-  width: 260px;
+  width: 460px;
   justify-content: space-between;
   color: black;
   transition: color 0.2s;
 }
 
-.paginationContainer:hover {
+/* .paginationContainer:hover {
   height: 65px;
   margin-bottom: -5px;
-  /* color: transparent; */
   transition: color 0.2s;
-}
+} */
 .paginateButton {
   height: 60px;
   transition: 0.2s;
 }
 
-.paginateButton:active {
+/* .paginateButton:active {
   height: 65px;
   transition: 0.2s;
-}
+} */
 .paginateButton:hover {
-  height: 65px;
+  /* height: 65px; */
+  border-bottom: 2px solid red;
+  border-top: 2px solid red;
+
+  padding-bottom: 0.8%;
+  padding-top: 0.8%;
+
   transition: 0.2s;
   cursor: pointer;
 }
@@ -81,6 +86,8 @@
 .indexCurrent {
   align-self: center;
   font-family: "Ailerons";
+  color: white;
+  font-size: 40px;
 }
 
 @keyframes fade {
