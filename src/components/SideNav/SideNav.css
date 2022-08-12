@@ -3,10 +3,15 @@
   width: var(--sideBarWidth);
   position: absolute;
   background-color: rgb(57, 4, 4);
+  background-image: url("../../assets/images/sideBarBackground.jpg");
+
   position: fixed;
   top: 0;
   left: 20px;
   display: flex;
+  padding-bottom: 2%;
+  border-bottom-right-radius: 25px;
+  border-bottom-right-radius: 25px;
 
   flex-direction: column;
 }
