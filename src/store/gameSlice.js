@@ -66,11 +66,8 @@ export const gameSlice = createSlice({
         changeOptions: (state, action) => {
             state.gameOptions = action.payload
             state.homeGamesArray = []
-            state.homeGamesArrayTitle = action.payload.params.category + ' Games'
-
-
-
-
+            action.payload.params.category === 'martial-arts' ? state.homeGamesArrayTitle =
+                'Fighting Games' : state.homeGamesArrayTitle = action.payload.params.category + ' Games'
         }
 
     },
