@@ -12,7 +12,7 @@
   flex-direction: column;
   overflow-y: hidden;
 }
-.SideNavContainer::before {
+.SideNavContainerBackground {
   min-height: 120vh;
   width: var(--sideBarWidth);
   background-image: url("../../assets/images/sideBarBackground.jpg");
