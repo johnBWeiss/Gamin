@@ -9,7 +9,7 @@
   top: 0;
   bottom: 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   flex-direction: column;
 }
 
@@ -21,9 +21,9 @@
   /* flex-grow: 1; */
   /* margin-bottom: 200px; */
 
-  position: fixed;
+  /* position: fixed;
   top: 130px;
-  left: 12px;
+  left: 12px; */
 }
 
 .SideNavLogo {
