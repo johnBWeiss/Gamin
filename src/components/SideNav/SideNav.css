@@ -15,11 +15,14 @@
 .SideNavInnerContainer {
   display: flex;
   flex-direction: column;
-  height: 70vh;
+  max-height: 500px;
   justify-content: space-between;
-  position: fixed;
+  flex-grow: 1;
+  margin-top: 15vh;
+
+  /* position: fixed;
   top: 50px;
-  left: calc(var(--sideBarWidth) - 55px);
+  left: calc(var(--sideBarWidth) - 25px); */
 }
 
 .SideNavLogo {
