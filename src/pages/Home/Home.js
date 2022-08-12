@@ -15,6 +15,8 @@ import logos from '../../assets/logos/logoController'
 
 const HomeContainer = () => {
 
+
+
     const { rightPaginate, leftPaginate } = logos
     const gameOptions = useSelector((state) => state.gameSlice.gameOptions)
 
@@ -35,6 +37,9 @@ const HomeContainer = () => {
     const totalLength = useSelector((state) => state.gameSlice.homeGamesArrayTotalLength)
     const homeTitle = useSelector((state) => state.gameSlice.homeGamesArrayTitle)
 
+    const resetReffFatherHandler = () => {
+        indexRef.current = 0
+    }
 
     const pagination = (operator) => {
         let current = operator ? indexRef.current + 8 : indexRef.current - 8
@@ -72,7 +77,7 @@ const HomeContainer = () => {
                         ))}
                     </div>}
                 </div></div>
-            <SideNav />
+            <SideNav resetReffHandler={resetReffFatherHandler} />
 
         </div >
 

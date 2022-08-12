@@ -6,13 +6,18 @@ import { changeOptions } from '../../store/gameSlice';
 import { useDispatch } from 'react-redux';
 
 
-export const SideNav = () => {
+export const SideNav = (resetReff) => {
+
+    const { resetReffHandler } = resetReff
     const { shooter, racing, strategy, sports, zombie, martialArts, home, controller } = logos
     const logoArray = [home, controller, shooter, strategy, racing, sports, zombie, martialArts]
 
     const dispatch = useDispatch()
 
+
+
     const dispatchCategoryHandler = (v) => {
+        resetReffHandler()
 
         if (v.title === 'home') {
             return
@@ -34,7 +39,7 @@ export const SideNav = () => {
                 {logoArray.map((v, i) => (
 
                     <img
-                        onClick={() => { dispatchCategoryHandler(v) }}
+                        onClick={() => { dispatchCategoryHandler(v); resetReff() }}
                         key={v.title}
                         src={v.src}
                         alt='logo'
