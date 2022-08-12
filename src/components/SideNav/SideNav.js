@@ -16,8 +16,9 @@ export const SideNav = () => {
         dispatch(changeOptions({ ...gameByCategory, params: { category: v.title } }))
     }
     return (
+        <>
+            <div className='SideNavContainerBackground'>            </div>
 
-        <div className='SideNavContainerBackground'>
             <div className='SideNavContainer'>
                 <div className='SideNavInnerContainer'>
                     {logoArray.map((v, i) => (
@@ -41,8 +42,7 @@ export const SideNav = () => {
 
                 </div>
             </div>
-        </div>
-    )
+        </>)
 }
 
 export default SideNav

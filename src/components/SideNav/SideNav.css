@@ -1,5 +1,5 @@
 .SideNavContainer {
-  height: 90vh;
+  height: 100%;
   width: var(--sideBarWidth);
   position: fixed;
   background-color: rgb(57, 4, 4);
