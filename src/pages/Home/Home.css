@@ -39,6 +39,40 @@
 .singleItem:hover {
   cursor: pointer;
 }
+.paginationContainer {
+  display: flex;
+  margin-top: 4%;
+  height: 60px;
+  width: 200px;
+  justify-content: space-between;
+  color: black;
+  transition: color 0.2s;
+}
+
+.paginationContainer:hover {
+  height: 65px;
+  margin-bottom: -5px;
+  color: transparent;
+  transition: color 0.2s;
+}
+.paginateButton {
+  height: 60px;
+  transition: 0.2s;
+}
+
+.paginateButton:active {
+  height: 65px;
+  transition: 0.2s;
+}
+.paginateButton:hover {
+  height: 65px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.indexCurrent {
+  align-self: center;
+}
 
 @keyframes fade {
   0% {

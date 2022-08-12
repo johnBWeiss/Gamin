@@ -17,3 +17,9 @@ body {
     --sideBarWidth: 60px;
   }
 }
+
+@media (max-width: 468px) {
+  * {
+    --sideBarWidth: 50px;
+  }
+}

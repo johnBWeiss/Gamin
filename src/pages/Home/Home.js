@@ -9,12 +9,17 @@ import {
 } from '../../store/gameSlice';
 import SideNav from '../../components/SideNav/SideNav';
 
+
+
+import logos from '../../assets/logos/logoController'
+
+
 const HomeContainer = () => {
 
+    const { rightPaginate, leftPaginate } = logos
+
+
     const indexRef = useRef(0)
-
-
-
 
     const dispatch = useDispatch()
 
@@ -48,9 +53,13 @@ const HomeContainer = () => {
         <div className='HomeContainer'>
             <div className='HomeInnerContainer'>
                 <div className='HomeDynamicTitle'>{homeTitle}</div>
-                <div onClick={() => { pagination(false) }}>botton left example</div>
-                <div onClick={() => { pagination(true) }}>botton right example</div>
-                <div>{indexRef.current}-{(totalLength < indexRef.current + 8) ? indexRef.current + totalLength - indexRef.current : indexRef.current + 8}</div>
+                <div className='paginationContainer'>
+                    <img className='paginateButton' src={leftPaginate.src} alt={leftPaginate.title} onClick={() => { pagination(false) }} />
+                    <div className='indexCurrent'>{indexRef.current}-{(totalLength < indexRef.current + 8) ? indexRef.current + totalLength - indexRef.current : indexRef.current + 8}</div>
+
+                    <img className='paginateButton' src={rightPaginate.src} alt={rightPaginate.title} onClick={() => { pagination(true) }} />
+                </div>
+
                 <div className='HomeContainerGrid'>
                     {gamesArray.length > 0 && <div
                         className={'HomeInnerGrid'}>

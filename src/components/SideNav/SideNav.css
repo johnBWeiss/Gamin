@@ -5,10 +5,20 @@
   position: fixed;
   left: 0;
   top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .SideNavInnerContainer {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  height: 80vh;
+  border: 2px solid gold;
+  justify-content: space-between;
+}
+
+.SideNavLogo {
+  width: 40px;
+  align-self: center;
 }
