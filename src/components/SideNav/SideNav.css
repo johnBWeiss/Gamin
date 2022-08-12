@@ -1,48 +1,28 @@
 .SideNavContainer {
-  /* height: 100%; */
   width: var(--sideBarWidth);
   position: absolute;
   background-color: rgb(57, 4, 4);
   background-image: url("../../assets/images/sideBarBackground.jpg");
-
+  height: 600px;
   position: fixed;
   top: 0;
-  left: 20px;
+  left: 0;
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding-bottom: 2%;
   border-bottom-right-radius: 25px;
   border-bottom-right-radius: 25px;
-
   flex-direction: column;
-}
-.SideNavContainerBackground {
-  min-height: 120vh;
-  width: var(--sideBarWidth);
-  background-image: url("../../assets/images/sideBarBackground.jpg");
-  position: fixed;
-  background-color: rgb(57, 4, 4);
-  left: 0;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  z-index: -1;
 }
 
 .SideNavInnerContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  grid-gap: 30px;
-  max-height: 500px;
-  /* flex-grow: 1; */
-  /* flex-grow: 1; */
+  flex-grow: 1;
   margin-top: 150px;
-
-  /* position: fixed;
-  top: 130px;
-  left: 12px; */
+  margin-bottom: 10px;
 }
 
 .SideNavLogo {

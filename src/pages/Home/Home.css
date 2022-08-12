@@ -26,24 +26,24 @@
 .HomeDynamicTitle {
   display: flex;
   align-self: center;
-  font-size: 160px;
-  margin-top: 5%;
+  font-size: 100px;
+  margin-top: 150px;
   font-family: "Ailerons";
   color: rgb(200, 60, 60);
+  margin-bottom: 50px;
   /* font-family: url("../../assets//fonts/Ailerons-Typeface.otf"); */
 }
 .HomeContainerGrid {
   display: flex;
   width: 85%;
   justify-content: center;
-  margin-top: 10%;
-  margin-bottom: 10%;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .HomeInnerGrid {
   display: grid;
   grid-template-columns: repeat(4, 300px);
-  margin-top: -5%;
   grid-gap: 30px 30px;
 }
 
@@ -52,37 +52,21 @@
 }
 .paginationContainer {
   display: flex;
-  margin-top: 4%;
+  margin-top: 100px;
   height: 60px;
   width: 460px;
   justify-content: space-between;
   color: black;
   transition: color 0.2s;
+  margin-bottom: 60px;
 }
 
-/* .paginationContainer:hover {
-  height: 65px;
-  margin-bottom: -5px;
-  transition: color 0.2s;
-} */
 .paginateButton {
   height: 60px;
   transition: 0.2s;
 }
 
-/* .paginateButton:active {
-  height: 65px;
-  transition: 0.2s;
-} */
 .paginateButton:hover {
-  /* height: 65px; */
-  border-bottom: 2px solid red;
-  border-top: 2px solid red;
-
-  padding-bottom: 0.8%;
-  padding-top: 0.8%;
-
-  transition: 0.2s;
   cursor: pointer;
 }
 
@@ -117,36 +101,63 @@
     grid-template-columns: repeat(2, 400px);
     grid-gap: 40px 40px;
   }
-}
-
-@media (max-width: 1030px) {
-  .HomeInnerGrid {
-    grid-template-columns: 500px;
-  }
   .HomeDynamicTitle {
     font-size: 80px;
   }
 }
 
-/* @media (max-width: 784px) {
+@media (max-width: 1030px) {
   .HomeInnerGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 400px;
   }
-} */
+  .HomeDynamicTitle {
+    font-size: 70px;
+  }
+
+  .paginationContainer {
+    width: 400px;
+  }
+}
+@media (max-width: 830px) {
+  .HomeDynamicTitle {
+    font-size: 60px;
+  }
+}
+@media (max-width: 766px) {
+  .HomeDynamicTitle {
+    font-size: 50px;
+  }
+  .indexCurrent {
+    font-size: 30px;
+  }
+}
 
 @media (max-width: 668px) {
   .HomeInnerGrid {
     grid-template-columns: 350px;
   }
+  .paginationContainer {
+    display: flex;
+    margin-top: 4%;
+    height: 40px;
+    width: 300px;
+  }
+  .paginateButton {
+    height: 40px;
+    transition: 0.2s;
+  }
 
   .HomeDynamicTitle {
-    font-size: 60px;
+    font-size: 40px;
   }
 }
 
 @media (max-width: 528px) {
   .HomeInnerGrid {
-    grid-template-columns: 300px;
+    grid-template-columns: 280px;
+  }
+  .HomeDynamicTitle {
+    font-size: 35px;
   }
 }
 
@@ -155,13 +166,29 @@
     grid-template-columns: 250px;
   }
   .HomeDynamicTitle {
-    font-size: 40px;
+    font-size: 30px;
+  }
+  .paginationContainer {
+    width: 250px;
+  }
+  .indexCurrent {
+    font-size: 26px;
   }
 }
 
 @media (max-width: 417px) {
   .HomeInnerGrid {
     grid-template-columns: 220px;
+  }
+  .HomeDynamicTitle {
+    font-size: 26px;
+  }
+
+  .paginationContainer {
+    width: 220px;
+  }
+  .indexCurrent {
+    font-size: 24px;
   }
 }
 @media (max-width: 370px) {
