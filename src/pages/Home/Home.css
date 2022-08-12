@@ -1,10 +1,7 @@
-/* @font-face {
-  font-family: "Ailerons";
-  src: url("../../assets/fonts/Ailerons.otf") format("otf");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-} */
+@font-face {
+  font-family: "AquireBold-8Ma60";
+  src: url("../../assets/fonts/AquireBold-8Ma60.otf");
+}
 
 .HomeContainer {
   display: flex;
@@ -28,7 +25,7 @@
   align-self: center;
   font-size: 120px;
   margin-top: 150px;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "AquireBold-8Ma60", Helvetica, Arial, sans-serif;
 
   color: rgb(200, 60, 60);
   margin-bottom: 50px;
@@ -73,7 +70,7 @@
 
 .indexCurrent {
   align-self: center;
-  font-family: "Ailerons", Helvetica, Arial, sans-serif;
+  font-family: "AquireBold-8Ma60", Helvetica, Arial, sans-serif;
   color: white;
   font-size: 40px;
 }
