@@ -13,11 +13,18 @@ export const SideNav = () => {
     const dispatch = useDispatch()
 
     const dispatchCategoryHandler = (v) => {
-        if (v.title === 'All games') {
+
+        if (v.title === 'home') {
+            return
+        }
+        if (v.title === 'All') {
             dispatch(changeOptions(getAllGamesOptions))
 
         }
-        dispatch(changeOptions({ ...gameByCategory, params: { category: v.title } }))
+
+        else {
+            dispatch(changeOptions({ ...gameByCategory, params: { category: v.title } }))
+        }
     }
     return (
 
