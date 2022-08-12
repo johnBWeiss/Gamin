@@ -11,7 +11,7 @@ import SideNav from '../../components/SideNav/SideNav';
 
 
 import logos from '../../assets/logos/logoController'
-import melting from '../../assets/gifs/melting.gif'
+// import melting from '../../assets/gifs/melting.gif'
 import robot from '../../assets/gifs/robot.avif'
 
 
