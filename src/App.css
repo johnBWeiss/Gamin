@@ -12,7 +12,7 @@ body {
   z-index: -2;
   position: fixed;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
   left: 0px;
