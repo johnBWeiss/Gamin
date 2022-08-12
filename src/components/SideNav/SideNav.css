@@ -1,5 +1,5 @@
 .SideNavContainer {
-  min-height: 120vh;
+  min-height: 115vh;
   width: var(--sideBarWidth);
   background-image: url("../../assets/images/sideBarBackground.jpg");
   position: fixed;
@@ -14,7 +14,7 @@
 .SideNavInnerContainer {
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  height: 70vh;
   justify-content: space-between;
   margin-top: 50px;
 }
