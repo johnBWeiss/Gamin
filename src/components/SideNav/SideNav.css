@@ -11,7 +11,7 @@
   overflow-y: hidden;
 }
 .SideNavContainerBackground {
-  min-height: 120vh;
+  min-height: 100vh;
   width: var(--sideBarWidth);
   background-image: url("../../assets/images/sideBarBackground.jpg");
   position: fixed;
