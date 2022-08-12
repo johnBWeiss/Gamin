@@ -1,6 +1,9 @@
 @font-face {
-  font-family: Ailerons;
+  font-family: "Ailerons";
   src: url("../../assets/fonts/Ailerons-Typeface.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 .HomeContainer {
