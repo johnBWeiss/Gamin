@@ -16,13 +16,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  grid-gap: 20px;
+  grid-gap: 30px;
   /* flex-grow: 1; */
-  margin-bottom: 200px;
+  /* margin-bottom: 200px; */
 
-  /* position: fixed;
+  position: fixed;
   top: 50px;
-  left: calc(var(--sideBarWidth) - 25px); */
+  left: 12px;
 }
 
 .SideNavLogo {
