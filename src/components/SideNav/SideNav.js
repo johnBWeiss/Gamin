@@ -17,31 +17,31 @@ export const SideNav = () => {
     }
     return (
 
-        <div className='SideNavContainerBackground'>
-            <div className='SideNavContainer'>
-                <div className='SideNavInnerContainer'>
-                    {logoArray.map((v, i) => (
+        // <div className='SideNavContainerBackground'>
+        <div className='SideNavContainer'>
+            <div className='SideNavInnerContainer'>
+                {logoArray.map((v, i) => (
 
-                        <img
-                            onClick={() => { dispatchCategoryHandler(v) }}
-                            key={v.title}
-                            src={v.src}
-                            alt='logo'
-                            title={v.title}
-                            className='SideNavLogo'
-                        />
-                    ))}
-
-
+                    <img
+                        onClick={() => { dispatchCategoryHandler(v) }}
+                        key={v.title}
+                        src={v.src}
+                        alt='logo'
+                        title={v.title}
+                        className='SideNavLogo'
+                    />
+                ))}
 
 
 
 
 
 
-                </div>
+
+
             </div>
         </div>
+        // </div>
     )
 }
 

@@ -3,6 +3,7 @@
   width: var(--sideBarWidth);
   position: absolute;
   background-color: rgb(57, 4, 4);
+  position: fixed;
   bottom: 12%;
   left: 8%;
   display: flex;
