@@ -1,17 +1,16 @@
 .SideNavContainer {
   height: 100%;
   width: var(--sideBarWidth);
-  position: sticky;
+  position: absolute;
   background-color: rgb(57, 4, 4);
   left: 0;
   bottom: 0;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  overflow-y: hidden;
 }
 .SideNavContainerBackground {
-  min-height: 100vh;
+  min-height: 120vh;
   width: var(--sideBarWidth);
   background-image: url("../../assets/images/sideBarBackground.jpg");
   position: fixed;
@@ -31,7 +30,7 @@
   justify-content: space-between;
   grid-gap: 30px;
   max-height: 500px;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   /* flex-grow: 1; */
   /* margin-bottom: 200px; */
 
