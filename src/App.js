@@ -1,7 +1,7 @@
 import './App.css';
 import Home from './pages/Home/Home';
 import background from './assets/images/backgroundSCIFI.jpg'
-import backgroundVid from './assets/images/backgroundVid.mp4'
+// import backgroundVid from './assets/images/backgroundVid.mp4'
 
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
