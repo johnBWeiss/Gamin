@@ -1,5 +1,5 @@
 .SideNavContainer {
-  min-height: 100%;
+  min-height: 100vh;
   width: var(--sideBarWidth);
   background-image: url("../../assets/images/sideBarBackground.jpg");
   position: fixed;
