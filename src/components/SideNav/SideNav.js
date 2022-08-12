@@ -3,7 +3,7 @@ import './SideNav.css'
 import logos from '../../assets/logos/logoController'
 import { gameByCategory } from '../../utils/axiosPaths';
 import { changeOptions } from '../../store/gameSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 
 export const SideNav = () => {

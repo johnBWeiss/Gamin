@@ -43,7 +43,7 @@
   display: flex;
   margin-top: 4%;
   height: 60px;
-  width: 200px;
+  width: 260px;
   justify-content: space-between;
   color: black;
   transition: color 0.2s;
@@ -52,7 +52,7 @@
 .paginationContainer:hover {
   height: 65px;
   margin-bottom: -5px;
-  color: transparent;
+  /* color: transparent; */
   transition: color 0.2s;
 }
 .paginateButton {

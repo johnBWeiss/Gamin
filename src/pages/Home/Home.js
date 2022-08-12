@@ -1,11 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import './Home.css';
 import HomeSingleItem from '../../components/HomeSingleItem/HomeSingleItem'
-import { getAllGamesOptions, gameByCategory } from '../../utils/axiosPaths';
 
 import { useDispatch, useSelector } from 'react-redux';
 import {
-    getAllGames, changeOptions
+    getAllGames,
 } from '../../store/gameSlice';
 import SideNav from '../../components/SideNav/SideNav';
 
@@ -22,7 +21,6 @@ const HomeContainer = () => {
 
 
     const indexRef = useRef(0)
-    // const gameOptions = useRef(getAllGamesOptions)
 
     const dispatch = useDispatch()
 
@@ -30,13 +28,12 @@ const HomeContainer = () => {
         dispatch(getAllGames([gameOptions, { indexStart: indexRef.current }]))
         return () => {
         }
-    }, [gameOptions])
+    }, [gameOptions, dispatch])
 
 
     const gamesArray = useSelector((state) => state.gameSlice.homeGamesArray)
     const totalLength = useSelector((state) => state.gameSlice.homeGamesArrayTotalLength)
     const homeTitle = useSelector((state) => state.gameSlice.homeGamesArrayTitle)
-    // dispatch(changeOptions())
 
 
     const pagination = (operator) => {
@@ -47,7 +44,8 @@ const HomeContainer = () => {
             return
         }
 
-        indexRef.current = current; dispatch(getAllGames([gameOptions, { indexStart: current }]))
+        indexRef.current = current;
+        dispatch(getAllGames([gameOptions, { indexStart: current }]))
     }
 
 
@@ -59,7 +57,7 @@ const HomeContainer = () => {
                 <div className='HomeDynamicTitle'>{homeTitle}</div>
                 <div className='paginationContainer'>
                     <img className='paginateButton' src={leftPaginate.src} alt={leftPaginate.title} onClick={() => { pagination(false) }} />
-                    <div className='indexCurrent'>{indexRef.current}-{(totalLength < indexRef.current + 8) ? indexRef.current + totalLength - indexRef.current : indexRef.current + 8}</div>
+                    <div className='indexCurrent'>{indexRef.current + 1}-{(totalLength < indexRef.current + 8) ? indexRef.current + totalLength - indexRef.current : indexRef.current + 8} / {totalLength}</div>
 
                     <img className='paginateButton' src={rightPaginate.src} alt={rightPaginate.title} onClick={() => { pagination(true) }} />
                 </div>
