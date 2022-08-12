@@ -1,5 +1,6 @@
 .app {
   /* font-family: "Ailerons"; */
+  min-height: 120vh;
 }
 
 body {
