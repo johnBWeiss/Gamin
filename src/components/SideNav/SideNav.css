@@ -18,6 +18,8 @@
   flex-direction: column;
   justify-content: space-between;
   grid-gap: 30px;
+  max-height: 600px;
+  flex-grow: 1;
   /* flex-grow: 1; */
   /* margin-bottom: 200px; */
 
