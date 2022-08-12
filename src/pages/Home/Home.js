@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import './Home.css';
 import HomeSingleItem from '../../components/HomeSingleItem/HomeSingleItem'
-import { getAllGamesOptions } from '../../utils/axiosPaths';
+import { getAllGamesOptions, gameByCategory } from '../../utils/axiosPaths';
 
 import { useDispatch, useSelector } from 'react-redux';
 import {
-    getAllGames,
+    getAllGames, changeOptions
 } from '../../store/gameSlice';
 import SideNav from '../../components/SideNav/SideNav';
 
@@ -17,22 +17,26 @@ import logos from '../../assets/logos/logoController'
 const HomeContainer = () => {
 
     const { rightPaginate, leftPaginate } = logos
+    const gameOptions = useSelector((state) => state.gameSlice.gameOptions)
+
 
 
     const indexRef = useRef(0)
+    // const gameOptions = useRef(getAllGamesOptions)
 
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getAllGames([getAllGamesOptions, { indexStart: indexRef.current }]))
+        dispatch(getAllGames([gameOptions, { indexStart: indexRef.current }]))
         return () => {
         }
-    }, [dispatch])
+    }, [gameOptions])
 
 
     const gamesArray = useSelector((state) => state.gameSlice.homeGamesArray)
     const totalLength = useSelector((state) => state.gameSlice.homeGamesArrayTotalLength)
     const homeTitle = useSelector((state) => state.gameSlice.homeGamesArrayTitle)
+    // dispatch(changeOptions())
 
 
     const pagination = (operator) => {
@@ -43,7 +47,7 @@ const HomeContainer = () => {
             return
         }
 
-        indexRef.current = current; dispatch(getAllGames([getAllGamesOptions, { indexStart: current }]))
+        indexRef.current = current; dispatch(getAllGames([gameOptions, { indexStart: current }]))
     }
 
 

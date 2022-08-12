@@ -17,7 +17,7 @@ const logoControllerArray = {
     strategy: { src: strategy, title: 'strategy' },
     sports: { src: sports, title: 'sports' },
     zombie: { src: zombie, title: 'zombie' },
-    martialArts: { src: martialArts, title: 'martialArts' },
+    martialArts: { src: martialArts, title: 'martial-arts' },
     home: { src: home, title: 'home' },
 }
 
