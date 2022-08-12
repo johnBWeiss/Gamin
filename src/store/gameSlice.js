@@ -4,6 +4,7 @@ import axios from 'axios';
 const initialState = {
     error: false,
     errorMessage: '',
+    pending: false,
     homeGamesArray: [],
     homeGamesArrayTotalLength: 0,
     homeGamesArrayTitle: 'All Games',
@@ -19,7 +20,6 @@ const initialState = {
 };
 
 
-
 export const getAllGames = createAsyncThunk('gameSlice/getAllGames',
 
     async ([options, { indexStart }], thunkAPI) => {
@@ -33,20 +33,6 @@ export const getAllGames = createAsyncThunk('gameSlice/getAllGames',
 
         }
     })
-
-// export const getGamesByCategory = createAsyncThunk('gameSlice/getGamesByCategory',
-
-//     async ([getAllGamesOptions, { indexStart }], thunkAPI) => {
-//         try {
-
-//             let response = await axios(getAllGamesOptions)
-//             let shortenedResponse = response?.data?.slice(indexStart, indexStart + 8) ?? []
-//             let responseLength = response?.data?.length
-//             return ({ data: shortenedResponse, dataLength: responseLength })
-//         } catch (error) {
-
-//         }
-//     })
 
 
 export const gameSlice = createSlice({
@@ -78,17 +64,14 @@ export const gameSlice = createSlice({
 
     extraReducers: (builder) => {
         builder
-            .addCase(getAllGames.pending, (state, action) => { })
+            .addCase(getAllGames.pending, (state, action) => {
+                state.pending = true
+            })
             .addCase(getAllGames.fulfilled, (state, { payload }) => {
-                console.log('payload', payload);
-                // let shortenedPayload = payload.slice(state.indexStart, state.indexStart + 8)
+                state.pending = false
 
                 state.homeGamesArray = payload.data
                 state.homeGamesArrayTotalLength = payload.dataLength
-                // state.homeGamesArrayTitle = 'All Games'
-
-
-
             })
 
     },

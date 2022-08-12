@@ -6,6 +6,9 @@
   font-family: "Ailerons-Typeface";
   src: url("../../assets/fonts/Ailerons-Typeface.otf");
 }
+.spinner {
+  height: 180px;
+}
 
 .HomeContainer {
   display: flex;
@@ -188,7 +191,7 @@
     width: 225px;
   }
   .indexCurrent {
-    font-size: 200px;
+    font-size: 20px;
   }
 }
 @media (max-width: 370px) {

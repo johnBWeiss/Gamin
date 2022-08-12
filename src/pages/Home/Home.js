@@ -11,6 +11,9 @@ import SideNav from '../../components/SideNav/SideNav';
 
 
 import logos from '../../assets/logos/logoController'
+import melting from '../../assets/gifs/melting.gif'
+import robot from '../../assets/gifs/robot.avif'
+
 
 
 const HomeContainer = () => {
@@ -36,6 +39,7 @@ const HomeContainer = () => {
     const gamesArray = useSelector((state) => state.gameSlice.homeGamesArray)
     const totalLength = useSelector((state) => state.gameSlice.homeGamesArrayTotalLength)
     const homeTitle = useSelector((state) => state.gameSlice.homeGamesArrayTitle)
+    const pending = useSelector((state) => state.gameSlice.pending)
 
     const resetReffFatherHandler = () => {
         indexRef.current = 0
@@ -60,14 +64,14 @@ const HomeContainer = () => {
         <div className='HomeContainer'>
             <div className='HomeInnerContainer'>
                 <div className='HomeDynamicTitle'>{homeTitle}</div>
-                <div className='paginationContainer'>
+                {!pending && <div className='paginationContainer'>
                     <img className='paginateButton' src={leftPaginate.src} alt={leftPaginate.title} onClick={() => { pagination(false) }} />
                     <div className='indexCurrent'>{indexRef.current + 1}-{(totalLength < indexRef.current + 8) ? indexRef.current + totalLength - indexRef.current : indexRef.current + 8} / {totalLength}</div>
 
                     <img className='paginateButton' src={rightPaginate.src} alt={rightPaginate.title} onClick={() => { pagination(true) }} />
-                </div>
-
-                <div className='HomeContainerGrid'>
+                </div>}
+                {pending && <img src={robot} alt={'spinner'} className='spinner' />
+                }                {!pending && <div className='HomeContainerGrid'>
                     {gamesArray.length > 0 && <div
                         className={'HomeInnerGrid'}>
                         {gamesArray.map((v, i) => (
@@ -76,7 +80,8 @@ const HomeContainer = () => {
                             </div>
                         ))}
                     </div>}
-                </div></div>
+                </div>}
+            </div>
             <SideNav resetReffHandler={resetReffFatherHandler} />
 
         </div >
