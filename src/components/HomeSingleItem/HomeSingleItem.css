@@ -213,13 +213,24 @@
     width: 50%;
   }
 } */
-@media (max-width: 575px) {
+@media (max-width: 750px) {
   .popUpDescription {
-    font-size: 1.2em;
+    font-size: 1em;
+    line-height: 30px;
   }
 
   .popUpTitle {
     font-size: 1.8em;
+  }
+}
+@media (max-width: 575px) {
+  .popUpDescription {
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 400px) {
+  .popUpDescription {
+    font-size: 0.7em;
   }
 }
 @media (max-height: 612px) {
