@@ -4,8 +4,10 @@ import logos from '../../assets/logos/logoController'
 
 const HomeSingleItem = (singleItem) => {
   const { data } = singleItem
-  const { title, thumbnail, release_date, publisher, short_description, game_url, id } = data
-  const { back, heart, link } = logos
+  const { title, thumbnail, release_date, publisher, short_description, game_url } = data
+  const { back,
+    //  heart,
+    link } = logos
   console.log(data);
   let shortenedTitle = title?.substring(0, 16) ?? ''
   shortenedTitle = title?.length >= 20 ? shortenedTitle + '...' : shortenedTitle
