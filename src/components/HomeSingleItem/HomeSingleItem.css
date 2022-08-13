@@ -225,14 +225,20 @@
 }
 @media (max-width: 575px) {
   .popUpDescription {
-    font-size: 0.8em;
+    font-size: 1.2em;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .popUpDescription {
-    font-size: 0.7em;
+    font-size: 1em;
   }
 }
+@media (max-width: 376px) {
+  .popUpDescription {
+    font-size: 0.91em;
+  }
+}
+
 @media (max-height: 612px) {
   .popUpDescription {
     font-size: 0.8em;
