@@ -53,3 +53,46 @@
     left: calc(var(--sideBarWidth) - 41px);
   } */
 }
+
+@media (max-height: 650px) {
+  .SideNavLogo {
+    width: 17px;
+  }
+  .SideNavContainer {
+    height: 520px;
+  }
+}
+
+@media (max-height: 550px) {
+  .SideNavContainer {
+    height: 460px;
+  }
+
+  .SideNavInnerContainer {
+    margin-top: 120px;
+  }
+}
+@media (max-height: 490px) {
+  .SideNavLogo {
+    width: 15px;
+  }
+  .SideNavContainer {
+    height: 360px;
+  }
+
+  .SideNavInnerContainer {
+    margin-top: 100px;
+  }
+}
+@media (max-height: 370px) {
+  .SideNavLogo {
+    width: 13px;
+  }
+  .SideNavContainer {
+    height: 300px;
+  }
+
+  .SideNavInnerContainer {
+    margin-top: 60px;
+  }
+}
