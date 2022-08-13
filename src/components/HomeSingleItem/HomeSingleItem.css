@@ -61,35 +61,35 @@
 }
 
 .popUpImage {
-  width: 50%;
-  height: 50%;
+  width: 75%;
+  height: 75%;
   object-fit: cover;
   border-radius: 20px;
-  z-index: 4;
+  z-index: 3;
   position: absolute;
-  top: 25%;
-  left: 25%;
+  top: 12.5%;
+  left: 12.5%;
   opacity: 0.15;
 }
 .popUpDescriptionContainer {
-  width: 50%;
-  height: 50%;
+  width: 75%;
+  height: 75%;
   object-fit: cover;
   border-radius: 20px;
   z-index: 4;
   position: absolute;
-  top: 25%;
-  left: 25%;
+  top: 12.5%;
+  left: 12.5%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  grid-gap: 30px;
-  gap: 30px;
+  grid-gap: 20px;
+  gap: 20px;
 }
 
 .popUpDescription {
   color: white;
-  font-size: 1.3em;
+  font-size: 1.6em;
   text-align: center;
   max-width: 90%;
 }
@@ -99,6 +99,7 @@
   align-self: center;
   color: #de9e1f;
   margin-top: 30px;
+  max-width: 90%;
 }
 
 .popUpdetails {
@@ -196,7 +197,52 @@
     font-size: 28px;
   }
 }
+@media (max-width: 1024px) {
+  .popUpCommercialDetailsInnerContainer {
+    flex-direction: column;
+  }
+}
+/* @media (max-width: 736px) {
+  .popUpDescription {
+    color: white;
+    font-size: 1.1em;
+  }
 
+  .popUpDescriptionContainer {
+    width: 50%;
+  }
+} */
+@media (max-width: 575px) {
+  .popUpDescription {
+    font-size: 1.2em;
+  }
+
+  .popUpTitle {
+    font-size: 1.8em;
+  }
+}
+@media (max-height: 612px) {
+  .popUpDescription {
+    font-size: 0.8em;
+    line-height: 20px;
+  }
+
+  .popUpTitle {
+    font-size: 1.7em;
+  }
+}
+@media (max-height: 480px) {
+  .popUpDescription {
+    font-size: 0.6em;
+    line-height: 20px;
+  }
+
+  .popUpTitle {
+    font-size: 1.5em;
+  }
+}
+
+/* 
 @media (max-width: 667px) {
   .popUpImage {
     width: 400px;
@@ -215,7 +261,7 @@
     font-size: 0.9rem;
     bottom: 75%;
   }
-}
+} */
 
 @media (max-width: 669px) {
   .itemTitleMore {
@@ -236,7 +282,7 @@
     width: 390px;
   } */
 
-  .popUpImage {
+  /* .popUpImage {
     width: 340px;
   }
 
@@ -252,7 +298,7 @@
   .popUpDescription {
     font-size: 0.8rem;
     bottom: 75%;
-  }
+  } */
 }
 @media (max-width: 462px) {
   .HomeSingleItemImage {
