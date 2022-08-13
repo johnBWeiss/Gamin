@@ -1,5 +1,5 @@
 .LandingPageContainer {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,21 +41,16 @@
   justify-content: center;
   align-items: center;
   animation: glowing 2s infinite forwards;
-  border: 5px solid red;
+}
+.LandingPageButton:hover {
+  cursor: pointer;
+  animation: white 1.5s infinite forwards;
 }
 
 .LandingPageButtonText {
   font-size: 25px;
   color: rgb(255, 255, 255);
 }
-
-/* div {
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
-  background-color: #ccc;
-  animation: glow 1s infinite alternate;
-} */
 
 @keyframes glowing {
   0% {
@@ -68,4 +63,19 @@
   100% {
     border: 3px solid rgb(62, 2, 70);
   }
+}
+@keyframes white {
+  0% {
+    border: 3px solid white;
+  }
+
+  100% {
+    border: 3px solid rgb(27, 0, 0);
+    opacity: 1;
+  }
+
+  /* 100% {
+    border: 3px solid rgb(125, 114, 114);
+    opacity: 1;
+  } */
 }
