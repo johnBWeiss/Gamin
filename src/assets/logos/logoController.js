@@ -9,6 +9,10 @@ import martialArts from './logoImages/martialArts.png'
 import home from './logoImages/home.png'
 import controller from './logoImages/controller.png'
 
+import back from './logoImages/back.png'
+import heart from './logoImages/heart.png'
+import link from './logoImages/link.png'
+
 const logoControllerArray = {
 
     rightPaginate: { src: rightPaginate, title: 'rightPaginate' },
@@ -21,6 +25,9 @@ const logoControllerArray = {
     martialArts: { src: martialArts, title: 'martial-arts' },
     home: { src: home, title: 'home' },
     controller: { src: controller, title: 'All' },
+    back: { src: back, title: 'back' },
+    heart: { src: heart, title: 'heart' },
+    link: { src: link, title: 'link' },
 }
 
 export default logoControllerArray
