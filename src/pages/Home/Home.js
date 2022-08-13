@@ -3,30 +3,17 @@ import './Home.css';
 import HomeSingleItem from '../../components/HomeSingleItem/HomeSingleItem'
 
 import { useDispatch, useSelector } from 'react-redux';
-import {
-    getAllGames,
-} from '../../store/gameSlice';
+import { getAllGames, } from '../../store/gameSlice';
 import SideNav from '../../components/SideNav/SideNav';
-
-
-
 import logos from '../../assets/logos/logoController'
-// import melting from '../../assets/gifs/melting.gif'
 import robot from '../../assets/gifs/robot.avif'
 
 
 
 const HomeContainer = () => {
-
-
-
     const { rightPaginate, leftPaginate } = logos
     const gameOptions = useSelector((state) => state.gameSlice.gameOptions)
-
-
-
     const indexRef = useRef(0)
-
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -52,12 +39,9 @@ const HomeContainer = () => {
         if (current === indexRef.current || current >= totalLength) {// this condition being true means that the user tried to go over the boindsrirs of the result array. no need to dispatch in that case, so there is a return as not to waste compuation on unnesecarry dispatch
             return
         }
-
         indexRef.current = current;
         dispatch(getAllGames([gameOptions, { indexStart: current }]))
     }
-
-
 
     return (
 

@@ -57,30 +57,29 @@
 }
 
 .popUpImage {
-  width: 600px;
+  width: 800px;
   height: 270px;
   object-fit: cover;
   border-radius: 20px;
   z-index: 4;
   position: relative;
   transition: opacity 1s;
-  opacity: 1;
+  opacity: 0.15;
 }
 
-.popUpImage:hover {
+/* .popUpImage:hover {
   transition: opacity 1s;
   opacity: 0.2;
-}
+} */
 
 .upperPopUpContent {
-  width: 600px;
-  height: 350px;
+  width: 800px;
 }
 
 .popUpInnerContainer {
   display: flex;
   flex-direction: column;
-  width: 600px;
+  width: 100%;
   height: 700px;
   justify-content: center;
   align-items: center;
@@ -89,7 +88,7 @@
 
 .popUpDescription {
   color: white;
-  font-size: 1rem;
+  font-size: 2rem;
   width: 90%;
   text-align: center;
   font-weight: 200;
@@ -99,7 +98,7 @@
   left: 5%;
 }
 .popUpTitle {
-  font-size: 2rem;
+  font-size: 4rem;
   color: #de9e1f;
 }
 

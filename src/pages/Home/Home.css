@@ -1,11 +1,3 @@
-@font-face {
-  font-family: "AquireBold-8Ma60";
-  src: url("../../assets/fonts/AquireBold-8Ma60.otf");
-}
-@font-face {
-  font-family: "Ailerons-Typeface";
-  src: url("../../assets/fonts/Ailerons-Typeface.otf");
-}
 .spinner {
   height: 180px;
 }

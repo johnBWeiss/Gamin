@@ -1,6 +1,16 @@
 .app {
   /* font-family: "Ailerons"; */
   min-height: 120vh;
+  min-height: 100vh;
+}
+
+@font-face {
+  font-family: "AquireBold-8Ma60";
+  src: url("./assets/fonts/AquireBold-8Ma60.otf");
+}
+@font-face {
+  font-family: "Ailerons-Typeface";
+  src: url("./assets/fonts/Ailerons-Typeface.otf");
 }
 
 body {

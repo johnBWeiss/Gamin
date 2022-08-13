@@ -1,0 +1,71 @@
+.LandingPageContainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Ailerons-Typeface", "AquireBold-8Ma60", Helvetica, Arial,
+    sans-serif;
+  color: white;
+}
+
+.LandingPageInnerContainer {
+  width: 70%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.LandingPageTitle {
+  font-size: 100px;
+  color: rgb(200, 60, 60);
+}
+
+.LandingPageSubTitle {
+  font-size: 30px;
+}
+
+.LandingPageParagraph {
+  max-width: 62%;
+  font-size: 0px;
+  line-height: 40px;
+}
+
+.LandingPageButton {
+  width: 380px;
+  height: 90px;
+  margin-top: 90px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: glowing 2s infinite forwards;
+  border: 5px solid red;
+}
+
+.LandingPageButtonText {
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+}
+
+/* div {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background-color: #ccc;
+  animation: glow 1s infinite alternate;
+} */
+
+@keyframes glowing {
+  0% {
+    border: 3px solid rgb(62, 2, 70);
+  }
+
+  50% {
+    border: 3px solid rgb(200, 60, 60);
+  }
+  100% {
+    border: 3px solid rgb(62, 2, 70);
+  }
+}

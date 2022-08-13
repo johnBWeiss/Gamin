@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-// import { useNavigate } from 'react-router-dom';
+
 import axios from 'axios';
 const initialState = {
     error: false,
@@ -52,10 +52,12 @@ export const gameSlice = createSlice({
         changeOptions: (state, action) => {
             state.gameOptions = action.payload
             let dynamicTitle = 'All Games'
-            if (action.payload.params?.category) {
-                action.payload.params?.category === 'martial-arts' ?
+
+            if (action.payload?.params?.category) {
+                action.payload?.params?.category === 'martial-arts' ?
                     dynamicTitle = 'Fighting Games' : dynamicTitle = action.payload.params.category + ' Games'
             }
+
             state.homeGamesArrayTitle =
                 dynamicTitle
         }
@@ -69,7 +71,6 @@ export const gameSlice = createSlice({
             })
             .addCase(getAllGames.fulfilled, (state, { payload }) => {
                 state.pending = false
-
                 state.homeGamesArray = payload.data
                 state.homeGamesArrayTotalLength = payload.dataLength
             })
