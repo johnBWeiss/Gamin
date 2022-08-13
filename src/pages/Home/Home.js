@@ -6,7 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllGames, } from '../../store/gameSlice';
 import SideNav from '../../components/SideNav/SideNav';
 import logos from '../../assets/logos/logoController'
-import robot from '../../assets/gifs/robot.avif'
+// import robot from '../../assets/gifs/robot.avif'
+import gear from '../../assets/images/Gear.png'
 
 
 
@@ -17,7 +18,7 @@ const HomeContainer = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getAllGames([gameOptions, { indexStart: indexRef.current }]))
+        dispatch(getAllGames([gameOptions, { indexStart: 0 }]))
         return () => {
         }
     }, [gameOptions, dispatch])
@@ -51,11 +52,10 @@ const HomeContainer = () => {
                 {!pending && <div className='paginationContainer'>
                     <img className='paginateButton' src={leftPaginate.src} alt={leftPaginate.title} onClick={() => { pagination(false) }} />
                     <div className='indexCurrent'>{indexRef.current + 1}-{(totalLength < indexRef.current + 8) ? indexRef.current + totalLength - indexRef.current : indexRef.current + 8} / {totalLength}</div>
-
                     <img className='paginateButton' src={rightPaginate.src} alt={rightPaginate.title} onClick={() => { pagination(true) }} />
                 </div>}
-                {pending && <img src={robot} alt={'spinner'} className='spinner' />
-                }                {!pending && <div className='HomeContainerGrid'>
+                {pending && <img src={gear} alt={'spinner'} className='spinner' />}
+                {!pending && <div className='HomeContainerGrid'>
                     {gamesArray.length > 0 && <div
                         className={'HomeInnerGrid'}>
                         {gamesArray.map((v, i) => (
