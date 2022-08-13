@@ -46,6 +46,7 @@ export const SideNav = (resetReff) => {
                         alt='logo'
                         title={v.title}
                         className='SideNavLogo'
+                        style={v.title === 'home' ? { borderBottom: '2px solid white', paddingBottom: '10px' } : { borderBottom: 'none' }}
                     />
                 ))}
             </div>
