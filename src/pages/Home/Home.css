@@ -1,5 +1,5 @@
 .spinner {
-  height: 280px;
+  height: 100px;
   animation: spinnerRoll infinite 6s;
 }
 
