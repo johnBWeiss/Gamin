@@ -33,11 +33,8 @@
 }
 
 .SideNavLogo:hover {
-  width: 30px;
-  align-self: center;
-  padding-bottom: 8%;
-  border-bottom: 4px solid white;
   cursor: pointer;
+  transform: translateX(10%);
 }
 
 /* @media (max-width: 669px) {
