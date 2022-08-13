@@ -120,23 +120,23 @@
 }
 @media (max-width: 723px) {
   .LandingPageTitle {
-    font-size: 95px;
+    font-size: 175px;
   }
 
   .LandingPageSubTitle {
-    font-size: 20px;
+    font-size: 33px;
   }
   .LandingPageSubTitle:before {
     content: "";
   }
 
   .LandingPageButtonText {
-    font-size: 14px;
+    font-size: 26px;
   }
 
   .LandingPageButton {
-    width: 261px;
-    height: 54px;
+    width: 361px;
+    height: 84px;
     border-radius: 20px;
   }
 
@@ -147,77 +147,67 @@
 
 @media (max-width: 610px) {
   .LandingPageTitle {
-    font-size: 45px;
+    font-size: 150px;
   }
 
   .LandingPageSubTitle {
-    font-size: 13px;
+    font-size: 25px;
   }
 
   .LandingPageButtonText {
-    font-size: 11px;
+    font-size: 16px;
   }
 
   .LandingPageButton {
-    width: 241px;
-    height: 44px;
+    width: 264px;
+    height: 49px;
     border-radius: 20px;
   }
 }
 @media (max-width: 511px) {
   .LandingPageTitle {
-    font-size: 40px;
+    font-size: 125px;
   }
 
   .LandingPageSubTitle {
-    font-size: 11.5px;
+    font-size: 21px;
+  }
+
+  .LandingPageContainer {
+    align-items: flex-start;
+    align-items: start;
+  }
+}
+@media (max-width: 420px) {
+  .LandingPageTitle {
+    font-size: 110px;
+  }
+
+  .LandingPageSubTitle {
+    font-size: 19px;
   }
 
   .LandingPageButtonText {
-    font-size: 10px;
+    font-size: 12.5px;
   }
 
   .LandingPageButton {
-    width: 211px;
-    height: 39px;
+    width: 210px;
+    height: 35px;
     border-radius: 20px;
   }
 }
-@media (max-width: 451px) {
+
+@media (max-width: 360px) {
   .LandingPageTitle {
-    font-size: 35px;
+    font-size: 100px;
   }
 
   .LandingPageSubTitle {
-    font-size: 10px;
+    font-size: 18px;
   }
 
   .LandingPageButtonText {
-    font-size: 8.5px;
-  }
-
-  .LandingPageButton {
-    width: 190px;
-    height: 30px;
-    border-radius: 20px;
-  }
-}
-@media (max-width: 391px) {
-  .LandingPageTitle {
-    font-size: 30px;
-  }
-
-  .LandingPageSubTitle {
-    font-size: 8.5px;
-  }
-
-  .LandingPageButtonText {
-    font-size: 7px;
-  }
-
-  .LandingPageButton {
-    width: 150px;
-    height: 20px;
-    border-radius: 20px;
+    font-size: 11px;
   }
 }
