@@ -10,8 +10,8 @@ const LandingPage = () => {
     return (
         <div className='LandingPageContainer'>
             <div className='LandingPageInnerContainer'>
-                <div className='LandingPageTitle'>Welcome To Gamin'</div>
-                <div className='LandingPageSubTitle'>Your source for the best free-to-play games</div>
+                <div className='LandingPageTitle'>Gamin</div>
+                <div className='LandingPageSubTitle'>the best free-to-play games</div>
                 <div className='LandingPageButton' onClick={() => navigate('/home')} >
                     <div className='LandingPageButtonText'
                     >Start browsin' games!</div>

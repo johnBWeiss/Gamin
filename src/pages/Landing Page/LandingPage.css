@@ -21,9 +21,16 @@
   font-size: 100px;
   color: rgb(200, 60, 60);
 }
+.LandingPageTitle::before {
+  content: "Welcome to ";
+}
 
 .LandingPageSubTitle {
   font-size: 30px;
+}
+
+.LandingPageSubTitle:before {
+  content: "Your source for ";
 }
 
 .LandingPageButton {
@@ -113,11 +120,14 @@
 }
 @media (max-width: 723px) {
   .LandingPageTitle {
-    font-size: 55px;
+    font-size: 95px;
   }
 
   .LandingPageSubTitle {
-    font-size: 16px;
+    font-size: 20px;
+  }
+  .LandingPageSubTitle:before {
+    content: "";
   }
 
   .LandingPageButtonText {
@@ -128,6 +138,10 @@
     width: 261px;
     height: 54px;
     border-radius: 20px;
+  }
+
+  .LandingPageTitle::before {
+    content: "";
   }
 }
 
