@@ -168,7 +168,7 @@
   }
 }
 
-@media (max-width: 532px) {
+@media (max-width: 550px) {
   .HomeInnerGrid {
     grid-template-columns: 230px;
   }
@@ -208,5 +208,10 @@
 @media (max-width: 370px) {
   .HomeInnerGrid {
     grid-template-columns: 200px;
+  }
+}
+@media (max-width: 340px) {
+  .HomeDynamicTitle {
+    font-size: 30px;
   }
 }
