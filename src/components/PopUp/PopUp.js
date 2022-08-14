@@ -10,29 +10,24 @@ export const PopUp = () => {
     const { back,
         //  heart,
         link } = logos
+
     const disptach = useDispatch()
     const popUpData = useSelector((state) => state.gameSlice.popUpData)
-
     const { title, thumbnail, release_date, publisher, short_description, game_url } = popUpData
 
-
-
     const popUpHandler = () => {
-        console.log('dispatch pop status');
-        disptach(changePopUpStatus())
+        disptach(changePopUpStatus({}))
     }
 
     return (
-        <div className='popUp' >
+        <div className='popUp'>
             <div className='upperPopUpContent'>
                 <img
                     className='popUpImage'
                     src={thumbnail}
-                    alt="pic"
-                />
+                    alt="pic" />
                 <div className='popUpDescriptionContainer'>
                     <div className='popUpTitle'>{title}</div>
-
                     <div className='popUpDescription'>
                         {short_description}
                     </div>
@@ -60,14 +55,14 @@ export const PopUp = () => {
                   /> */}
                             <a
                                 href={game_url}
-                                target="_blank"
-                                rel="noreferrer noopener"
+                                target='_blank'
+                                rel='noreferrer noopener'
                                 className='popUpLink'
                             >
                                 <img
                                     style={{ height: '100%' }}
                                     src={link.src}
-                                    alt="link"
+                                    alt='link'
                                     title='Link to game page'
                                 />
                             </a>

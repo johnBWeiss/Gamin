@@ -52,8 +52,9 @@
   align-self: center;
   color: #de9e1f;
   margin-top: 30px;
-  max-width: 85%;
+  max-width: 90%;
   overflow-wrap: break-word;
+  text-align: center;
 }
 
 .popUpdetails {
@@ -94,6 +95,7 @@
   border-right: 0.2px solid white;
   border-left: 0.2px solid white;
   width: calc(100% + 0.1px);
+  z-index: 10;
 }
 
 .popUpMiniFooter {
@@ -137,15 +139,24 @@
   .popUpDescription {
     font-size: 1.2em;
   }
+  .popUpTitle {
+    font-size: 1.6em;
+  }
 }
 @media (max-width: 450px) {
   .popUpDescription {
     font-size: 1em;
   }
+  .popUpTitle {
+    font-size: 1.4em;
+  }
 }
 @media (max-width: 376px) {
   .popUpDescription {
     font-size: 0.91em;
+  }
+  .popUpTitle {
+    font-size: 1.3em;
   }
 }
 
