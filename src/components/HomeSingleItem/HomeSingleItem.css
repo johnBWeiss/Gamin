@@ -46,7 +46,7 @@
   word-break: break-all;
 }
 
-.popUp {
+/* .popUp {
   position: fixed;
   height: 100%;
   width: 100%;
@@ -164,13 +164,6 @@
 }
 .popUpLink:hover {
   cursor: pointer;
-}
-
-/* .popUpGoBackButton {
-  background-color: black;
-  color: white;
-  padding: 1.5%;
-  border-radius: 30px;
 } */
 
 @media (max-width: 1166px) {
@@ -202,11 +195,11 @@
     font-size: 28px;
   }
 }
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .popUpCommercialDetailsInnerContainer {
     flex-direction: column;
   }
-}
+} */
 /* @media (max-width: 736px) {
   .popUpDescription {
     color: white;
@@ -217,7 +210,7 @@
     width: 50%;
   }
 } */
-@media (max-width: 750px) {
+/* @media (max-width: 750px) {
   .popUpDescription {
     font-size: 1em;
     line-height: 30px;
@@ -262,7 +255,7 @@
   .popUpTitle {
     font-size: 1.5em;
   }
-}
+} */
 
 /* 
 @media (max-width: 667px) {
@@ -299,29 +292,6 @@
   }
 }
 
-@media (max-width: 481px) {
-  /* .galleryContainer {
-    width: 390px;
-  } */
-
-  /* .popUpImage {
-    width: 340px;
-  }
-
-  .upperPopUpContent {
-    width: 340px;
-    height: 350px;
-  }
-
-  .popUpInnerContainer {
-    width: 340px;
-  }
-
-  .popUpDescription {
-    font-size: 0.8rem;
-    bottom: 75%;
-  } */
-}
 @media (max-width: 462px) {
   .HomeSingleItemImage {
     height: 175px;

@@ -9,6 +9,8 @@ import logos from '../../assets/logos/logoController'
 import gear from '../../assets/images/Gear.png'
 import topScroll from '../../assets/images/topScroll.png'
 
+import { PopUp } from '../../components/PopUp/PopUp';
+
 
 
 const HomeContainer = () => {
@@ -28,6 +30,7 @@ const HomeContainer = () => {
     const totalLength = useSelector((state) => state.gameSlice.homeGamesArrayTotalLength)
     const homeTitle = useSelector((state) => state.gameSlice.homeGamesArrayTitle)
     const pending = useSelector((state) => state.gameSlice.pending)
+    const showPopUp = useSelector((state) => state.gameSlice.showPopUp)
 
     const resetReffFatherHandler = () => {
         indexRef.current = 0
@@ -46,38 +49,40 @@ const HomeContainer = () => {
 
     return (
 
-        <div className='HomeContainer'>
-            <div className='HomeInnerContainer'>
-                <div className='HomeDynamicTitle'>{homeTitle}</div>
-                {!pending && <div className='paginationContainer'>
-                    <img className='paginateButton' src={leftPaginate.src} alt={leftPaginate.title} onClick={() => { pagination(false) }} />
-                    <div className='indexCurrent'>{indexRef.current + 1}-{(totalLength < indexRef.current + 8) ? indexRef.current + totalLength - indexRef.current : indexRef.current + 8} / {totalLength}</div>
-                    <img className='paginateButton' src={rightPaginate.src} alt={rightPaginate.title} onClick={() => { pagination(true) }} />
-                </div>}
-                {pending && <img src={gear} alt={'spinner'} className='spinner' />}
-                {!pending && <div className='HomeContainerGrid'>
-                    {gamesArray.length > 0 && <div
-                        className={'HomeInnerGrid'}>
-                        {gamesArray.map((v, i) => (
-                            <div className='singleItem'>
-                                <HomeSingleItem key={v.id} data={v} />
-                            </div>
-                        ))}
+        <>
+            {!showPopUp && <div className='HomeContainer'>
+                <div className='HomeInnerContainer'>
+                    <div className='HomeDynamicTitle'>{homeTitle}</div>
+                    {!pending && <div className='paginationContainer'>
+                        <img className='paginateButton' src={leftPaginate.src} alt={leftPaginate.title} onClick={() => { pagination(false) }} />
+                        <div className='indexCurrent'>{indexRef.current + 1}-{(totalLength < indexRef.current + 8) ? indexRef.current + totalLength - indexRef.current : indexRef.current + 8} / {totalLength}</div>
+                        <img className='paginateButton' src={rightPaginate.src} alt={rightPaginate.title} onClick={() => { pagination(true) }} />
                     </div>}
-                </div>}
-                {!pending && <><div className='paginationContainer'>
-                    <img className='paginateButton' src={leftPaginate.src} alt={leftPaginate.title} onClick={() => { pagination(false) }} />
-                    <div className='indexCurrent'>{indexRef.current + 1}-{(totalLength < indexRef.current + 8) ? indexRef.current + totalLength - indexRef.current : indexRef.current + 8} / {totalLength}</div>
-                    <img className='paginateButton' src={rightPaginate.src} alt={rightPaginate.title} onClick={() => { pagination(true) }} />
+                    {pending && <img src={gear} alt={'spinner'} className='spinner' />}
+                    {!pending && <div className='HomeContainerGrid'>
+                        {gamesArray.length > 0 && <div
+                            className={'HomeInnerGrid'}>
+                            {gamesArray.map((v, i) => (
+                                <div className='singleItem'>
+                                    <HomeSingleItem key={v.id} data={v} />
+                                </div>
+                            ))}
+                        </div>}
+                    </div>}
+                    {!pending && <><div className='paginationContainer'>
+                        <img className='paginateButton' src={leftPaginate.src} alt={leftPaginate.title} onClick={() => { pagination(false) }} />
+                        <div className='indexCurrent'>{indexRef.current + 1}-{(totalLength < indexRef.current + 8) ? indexRef.current + totalLength - indexRef.current : indexRef.current + 8} / {totalLength}</div>
+                        <img className='paginateButton' src={rightPaginate.src} alt={rightPaginate.title} onClick={() => { pagination(true) }} />
+                    </div>
+                        <img src={topScroll} className='topScroll' alt='scroll to top' title='Scroll to top' onClick={() => { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }) }} />
+                    </>}
                 </div>
-                    <img src={topScroll} className='topScroll' alt='scroll to top' title='Scroll to top' onClick={() => { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }) }} />
-                </>}
-            </div>
-            <SideNav resetReffHandler={resetReffFatherHandler} />
+                <SideNav resetReffHandler={resetReffFatherHandler} />
 
-        </div >
-
-    );
+            </div >
+            }
+            {showPopUp && <PopUp />
+            }        </>);
 };
 
 export default HomeContainer;

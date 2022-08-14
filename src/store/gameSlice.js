@@ -5,6 +5,8 @@ const initialState = {
     error: false,
     errorMessage: '',
     pending: false,
+    showPopUp: false,
+    popUpData: {},
     homeGamesArray: [],
     homeGamesArrayTotalLength: 0,
     homeGamesArrayTitle: 'All Games',
@@ -48,6 +50,11 @@ export const gameSlice = createSlice({
             action.payload.errorType && (state.error = action.payload.errorType);
             state.active = action.payload.active;
         },
+        changePopUpStatus: (state, action) => {
+
+            state.showPopUp = !state.showPopUp
+            state.popUpData = { ...action.payload }
+        },
 
         changeOptions: (state, action) => {
             state.gameOptions = action.payload
@@ -81,7 +88,8 @@ export const gameSlice = createSlice({
 export const {
 
     validationError,
-    changeOptions
+    changeOptions,
+    changePopUpStatus
 
 } = gameSlice.actions;
 
