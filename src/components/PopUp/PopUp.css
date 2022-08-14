@@ -179,6 +179,15 @@
   .popUpTitle {
     font-size: 1.7em;
   }
+
+  .popUpLogo {
+    height: 30px;
+    width: 30px;
+  }
+  .popUpLink {
+    height: 30px;
+    width: 30px;
+  }
 }
 @media (max-height: 480px) {
   .popUpDescription {
