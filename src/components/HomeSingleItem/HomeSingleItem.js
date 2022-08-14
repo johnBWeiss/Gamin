@@ -32,7 +32,8 @@ const HomeSingleItem = (singleItem) => {
         onClick={popUpHandler}
         className='HomeSingleItemImage'
         src={thumbnail}
-        alt="item pic" />
+        alt={title}
+        title={title} />
       <div
         className='vertFlex itemDetailsContainer' onClick={() => popUpHandler()}>
         <div className='itemTitleMore'>

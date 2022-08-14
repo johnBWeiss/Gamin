@@ -34,7 +34,7 @@
 
 .SideNavLogo:hover {
   cursor: pointer;
-  transform: translateX(10%);
+  transform: translateX(20%);
 }
 
 @media (max-width: 469px) {
