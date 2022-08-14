@@ -6,8 +6,14 @@
   top: 0px;
   background: rgb(48, 44, 44);
   z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   font-family: "Libre Baskerville", serif;
 }
@@ -15,6 +21,7 @@
 .popUpImage {
   width: 75%;
   height: 75%;
+  -o-object-fit: cover;
   object-fit: cover;
   border-radius: 20px;
   z-index: 3;
@@ -27,14 +34,22 @@
 .popUpDescriptionContainer {
   width: 75%;
   height: 75%;
+  -o-object-fit: cover;
   object-fit: cover;
   border-radius: 20px;
   z-index: 4;
   position: absolute;
   top: 12.5%;
   left: 12.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   grid-gap: 20px;
   gap: 20px;
@@ -49,6 +64,8 @@
 
 .popUpTitle {
   font-size: 2em;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
   align-self: center;
   color: #de9e1f;
   margin-top: 30px;
@@ -58,14 +75,25 @@
 }
 
 .popUpdetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   color: goldenrod;
 }
 
 .popUpCommercialDetailsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   width: 100%;
   color: goldenrod;
@@ -75,7 +103,11 @@
   right: 0;
 }
 .popUpCommercialDetailsInnerContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   width: 90%;
 }
@@ -85,8 +117,14 @@
   bottom: 0;
   left: 0;
   right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   background-color: white;
   border-bottom-left-radius: 20px;
@@ -99,8 +137,14 @@
 }
 
 .popUpMiniFooter {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   height: 100%;
   width: 70%;
@@ -153,6 +197,9 @@
 }
 @media (max-width: 1024px) {
   .popUpCommercialDetailsInnerContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
 }

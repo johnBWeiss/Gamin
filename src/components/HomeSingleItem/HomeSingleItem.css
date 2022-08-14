@@ -1,23 +1,36 @@
 .vertFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
   gap: 2px;
   text-align: left;
 }
 
 .vertContainerFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   border-radius: 20px;
 }
 .vertContainerFlex:hover {
+  -webkit-box-shadow: 0px 16px 20px #00000029;
   box-shadow: 0px 16px 20px #00000029;
   cursor: pointer;
 }
 
 .galleryContainer {
   background-color: white;
+  -webkit-box-shadow: 0px 3px 6px #00000029;
   box-shadow: 0px 3px 6px #00000029;
   border-radius: 20px;
 }
@@ -32,6 +45,7 @@
 .HomeSingleItemImage {
   height: 158px;
   width: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;

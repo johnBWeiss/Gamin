@@ -1,12 +1,33 @@
 .LandingPageContainer {
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   font-family: "Ailerons-Typeface", "AquireBold-8Ma60", Helvetica, Arial,
     sans-serif;
   color: white;
+  -webkit-animation: gradual 1.7s linear 0s 1 forwards;
   animation: gradual 1.7s linear 0s 1 forwards;
+}
+
+@-webkit-keyframes gradual {
+  0% {
+    opacity: 0;
+    margin-top: 1%;
+  }
+
+  30% {
+    margin-top: 0%;
+  }
+  40% {
+    opacity: 1;
+  }
 }
 
 @keyframes gradual {
@@ -26,9 +47,18 @@
 .LandingPageInnerContainer {
   width: 90%;
   height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -46,19 +76,42 @@
   height: 60px;
   margin-top: 70px;
   border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   font-size: 25px;
+  -webkit-animation: glowing 3s infinite forwards;
   animation: glowing 3s infinite forwards;
 }
 .LandingPageButton:hover {
   cursor: pointer;
+  -webkit-animation: white 1.5s infinite forwards;
   animation: white 1.5s infinite forwards;
 }
 
 .LandingPageButtonText {
   color: rgb(255, 255, 255);
+}
+
+@-webkit-keyframes glowing {
+  0% {
+    border: 3px solid rgb(62, 2, 70);
+  }
+
+  50% {
+    border: 3px solid rgb(200, 60, 60);
+    border-radius: 0px;
+  }
+
+  100% {
+    border: 3px solid rgb(62, 2, 70);
+  }
 }
 
 @keyframes glowing {
@@ -73,6 +126,16 @@
 
   100% {
     border: 3px solid rgb(62, 2, 70);
+  }
+}
+@-webkit-keyframes white {
+  0% {
+    border: 3px solid white;
+  }
+
+  100% {
+    border: 3px solid rgb(27, 0, 0);
+    opacity: 1;
   }
 }
 @keyframes white {
@@ -115,7 +178,33 @@
     width: 361px;
     height: 74px;
     border-radius: 20px;
+    -webkit-animation-duration: 2s;
     animation-duration: 2s;
+  }
+  @-webkit-keyframes glowing {
+    0% {
+      border: 3px solid rgb(62, 2, 70);
+      width: 1px;
+      font-size: 0px;
+      border-radius: 0px;
+    }
+    15% {
+      border-radius: 0px;
+      font-size: 0px;
+    }
+
+    50% {
+      border: 3px solid rgb(200, 60, 60);
+    }
+
+    85% {
+      font-size: 26px;
+    }
+
+    100% {
+      border: 3px solid rgb(62, 2, 70);
+      font-size: 26px;
+    }
   }
   @keyframes glowing {
     0% {
@@ -161,7 +250,24 @@
     width: 264px;
     height: 49px;
     border-radius: 20px;
+    -webkit-animation-duration: 2s;
     animation-duration: 2s;
+  }
+
+  @-webkit-keyframes glowing {
+    0% {
+      border: 3px solid rgb(200, 60, 60);
+    }
+
+    50% {
+      border: 3px solid rgb(62, 2, 70);
+
+      border-radius: 0px;
+    }
+
+    100% {
+      border: 3px solid rgb(200, 60, 60);
+    }
   }
 
   @keyframes glowing {
@@ -190,6 +296,8 @@
   }
 
   .LandingPageContainer {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
     align-items: start;
   }

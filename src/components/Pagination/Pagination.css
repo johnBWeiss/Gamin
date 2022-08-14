@@ -1,15 +1,23 @@
 .paginationContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: 60px;
   width: 460px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   color: black;
+  -webkit-transition: color 0.2s;
+  -o-transition: color 0.2s;
   transition: color 0.2s;
   margin-bottom: 40px;
 }
 
 .paginateButton {
   height: 60px;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
   transition: 0.2s;
 }
 
