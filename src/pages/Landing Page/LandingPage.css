@@ -18,30 +18,24 @@
 }
 
 .LandingPageTitle {
-  font-size: 100px;
+  font-size: 250px;
   color: rgb(200, 60, 60);
-}
-.LandingPageTitle::before {
-  content: "Welcome to ";
 }
 
 .LandingPageSubTitle {
-  font-size: 30px;
-}
-
-.LandingPageSubTitle:before {
-  content: "Your source for ";
+  font-size: 40px;
 }
 
 .LandingPageButton {
   width: 380px;
-  height: 90px;
-  margin-top: 90px;
+  height: 60px;
+  margin-top: 70px;
   border-radius: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: glowing 2s infinite forwards;
+  font-size: 25px;
+  animation: glowing 3s infinite forwards;
 }
 .LandingPageButton:hover {
   cursor: pointer;
@@ -49,7 +43,6 @@
 }
 
 .LandingPageButtonText {
-  font-size: 25px;
   color: rgb(255, 255, 255);
 }
 
@@ -60,7 +53,9 @@
 
   50% {
     border: 3px solid rgb(200, 60, 60);
+    border-radius: 0px;
   }
+
   100% {
     border: 3px solid rgb(62, 2, 70);
   }
@@ -76,41 +71,17 @@
   }
 }
 
-@media (max-width: 1167px) {
-  .LandingPageTitle {
-    font-size: 80px;
-  }
-
-  .LandingPageSubTitle {
-    font-size: 25px;
-  }
-
-  .LandingPageButtonText {
-    font-size: 20px;
-  }
-
-  .LandingPageButton {
-    width: 351px;
-    height: 85px;
-  }
-}
 @media (max-width: 883px) {
   .LandingPageTitle {
-    font-size: 65px;
+    font-size: 210px;
   }
 
   .LandingPageSubTitle {
-    font-size: 19px;
-  }
-
-  .LandingPageButtonText {
-    font-size: 17px;
+    font-size: 34px;
   }
 
   .LandingPageButton {
-    width: 281px;
     height: 64px;
-    border-radius: 20px;
   }
 }
 @media (max-width: 723px) {
@@ -125,18 +96,36 @@
     content: "";
   }
 
-  .LandingPageButtonText {
-    font-size: 26px;
-  }
-
   .LandingPageButton {
     width: 361px;
-    height: 84px;
+    height: 74px;
     border-radius: 20px;
+    animation-duration: 2s;
   }
+  @keyframes glowing {
+    0% {
+      border: 3px solid rgb(62, 2, 70);
+      width: 1px;
+      font-size: 0px;
+      border-radius: 0px;
+    }
+    15% {
+      border-radius: 0px;
+      font-size: 0px;
+    }
 
-  .LandingPageTitle::before {
-    content: "";
+    50% {
+      border: 3px solid rgb(200, 60, 60);
+    }
+
+    85% {
+      font-size: 26px;
+    }
+
+    100% {
+      border: 3px solid rgb(62, 2, 70);
+      font-size: 26px;
+    }
   }
 }
 
@@ -157,6 +146,23 @@
     width: 264px;
     height: 49px;
     border-radius: 20px;
+    animation-duration: 2s;
+  }
+
+  @keyframes glowing {
+    0% {
+      border: 3px solid rgb(200, 60, 60);
+    }
+
+    50% {
+      border: 3px solid rgb(62, 2, 70);
+
+      border-radius: 0px;
+    }
+
+    100% {
+      border: 3px solid rgb(200, 60, 60);
+    }
   }
 }
 @media (max-width: 511px) {

@@ -38,7 +38,7 @@
 .HomeDynamicTitle {
   display: flex;
   align-self: center;
-  font-size: 120px;
+  font-size: 150px;
   margin-top: 150px;
   font-family: "Ailerons-Typeface", "AquireBold-8Ma60", Helvetica, Arial,
     sans-serif;
@@ -118,9 +118,6 @@
     grid-template-columns: repeat(2, 400px);
     grid-gap: 40px 40px;
   }
-  .HomeDynamicTitle {
-    font-size: 100px;
-  }
 }
 
 @media (max-width: 1030px) {
@@ -128,15 +125,15 @@
     grid-template-columns: 370px;
   }
   .HomeDynamicTitle {
-    font-size: 90px;
+    font-size: 140px;
   }
   .paginationContainer {
     width: 400px;
   }
 }
-@media (max-width: 830px) {
+@media (max-width: 840px) {
   .HomeDynamicTitle {
-    font-size: 75px;
+    font-size: 110px;
   }
   .HomeInnerGrid {
     grid-template-columns: 350px;
@@ -162,9 +159,11 @@
     height: 40px;
     transition: 0.2s;
   }
-
+  .HomeContainerGrid {
+    margin-top: -15px;
+  }
   .HomeDynamicTitle {
-    font-size: 60px;
+    font-size: 90px;
   }
 }
 
@@ -173,14 +172,14 @@
     grid-template-columns: 230px;
   }
   .HomeDynamicTitle {
-    font-size: 45px;
+    font-size: 75px;
     margin-top: 50px;
   }
 }
 
 @media (max-width: 468px) {
   .HomeDynamicTitle {
-    font-size: 40px;
+    font-size: 65px;
   }
   .paginationContainer {
     width: 255px;
@@ -195,7 +194,7 @@
     grid-template-columns: 220px;
   }
   .HomeDynamicTitle {
-    font-size: 35px;
+    font-size: 52px;
   }
 
   .paginationContainer {
@@ -212,6 +211,6 @@
 }
 @media (max-width: 340px) {
   .HomeDynamicTitle {
-    font-size: 30px;
+    font-size: 40px;
   }
 }

@@ -55,7 +55,7 @@ export const gameSlice = createSlice({
 
             if (action.payload?.params?.category) {
                 action.payload?.params?.category === 'martial-arts' ?
-                    dynamicTitle = 'Fighting Games' : dynamicTitle = action.payload.params.category + ' Games'
+                    dynamicTitle = 'Fighting' : dynamicTitle = action.payload.params.category
             }
 
             state.homeGamesArrayTitle =
