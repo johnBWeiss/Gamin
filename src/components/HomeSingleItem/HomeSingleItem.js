@@ -1,15 +1,12 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { changePopUpStatus } from '../../store/gameSlice'
 import './HomeSingleItem.css';
-import logos from '../../assets/logos/logoController'
 
 const HomeSingleItem = (singleItem) => {
   const { data } = singleItem
-  const { title, thumbnail, release_date, publisher, short_description, game_url } = data
-  const { back,
-    //  heart,
-    link } = logos
+  const { title, thumbnail, release_date, publisher } = data
+
 
   // TODO encapsulate to function tha recieves tring and how much to cut
   let shortenedTitle = title?.substring(0, 16) ?? ''
