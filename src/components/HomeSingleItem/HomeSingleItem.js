@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { changePopUpStatus } from '../../store/gameSlice'
+import { shorten } from '../../utils/functions';
 import './HomeSingleItem.css';
 
 const HomeSingleItem = (singleItem) => {
@@ -12,12 +13,6 @@ const HomeSingleItem = (singleItem) => {
 
 
   // the shorten function recives texts and slices them according to dynamic values.
-  const shorten = (text, limit) => {
-    let slicedText = text?.substring(0, limit) ?? ''
-    slicedText = text?.length >= limit ? slicedText + '...' : slicedText
-    return slicedText
-  }
-
   let shortenedTitle = shorten(title, 19)
   let shortenedPublisher = shorten(publisher, 19)
 

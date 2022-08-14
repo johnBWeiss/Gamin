@@ -3,15 +3,19 @@ import logos from '../../assets/logos/logoController'
 import './PopUp.css'
 import { changePopUpStatus } from '../../store/gameSlice'
 import { useDispatch, useSelector } from 'react-redux';
+import { shorten } from '../../utils/functions';
 
 
 const PopUp = () => {
 
     const { back, link } = logos
-
     const disptach = useDispatch()
     const popUpData = useSelector((state) => state.gameSlice.popUpData)
     const { title, thumbnail, release_date, publisher, short_description, game_url } = popUpData
+
+    // the shorten function recives texts and slices them according to dynamic values.
+    let even_shorter_description = shorten(short_description, 216)
+
 
     const popUpHandler = () => {
         disptach(changePopUpStatus({}))
@@ -27,7 +31,7 @@ const PopUp = () => {
                 <div className='popUpDescriptionContainer'>
                     <div className='popUpTitle'>{title}</div>
                     <div className='popUpDescription'>
-                        {short_description}
+                        {even_shorter_description}
                     </div>
                     <div className='popUpCommercialDetailsContainer'>
                         <div className='popUpCommercialDetailsInnerContainer'>

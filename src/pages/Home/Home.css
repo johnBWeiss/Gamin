@@ -93,9 +93,12 @@
 .topScroll {
   height: 60px;
   margin-top: 3%;
+  transition: 0.3s;
 }
 .topScroll:hover {
   cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.3s;
 }
 
 @-webkit-keyframes gradual {
