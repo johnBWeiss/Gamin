@@ -51,3 +51,9 @@ html {
     --sideBarWidth: 50px;
   }
 }
+
+@media (max-height: 650px) and (max-width: 2600px) {
+  * {
+    --sideBarWidth: 60px;
+  }
+}
