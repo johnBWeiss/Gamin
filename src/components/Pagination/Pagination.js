@@ -4,29 +4,11 @@ import './Pagination.css'
 
 const Pagination = (data) => {
 
-
-
     const childPagination = (operator) => {
-
-
-        //true is pagination forward, false pagination back
-        // let current = operator ? index : index - 8;
-        // current = current < 0 ? 0 : current;
-
-        //this condition ensures there will be no api call if over or under the limit for the index
-        // if (current === index || current >= gameArrayLength) {
-        //     return
-        // }
-
-        // index = current;
-
-        // dispatch(getAllGames([gameOptions, { indexStart: current }]));
-
-        //send to the father the updated ref
         fatherPagination(operator)
     }
-
     const { left, right, index, gameArrayLength, fatherPagination } = data
+
     return (
         <div className='paginationContainer'>
             <img className='paginateButton' src={left.src} alt={left.title} onClick={() => { childPagination(false) }} />

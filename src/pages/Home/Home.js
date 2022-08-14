@@ -11,13 +11,12 @@ import PopUp from '../../components/PopUp/PopUp';
 import topScroll from '../../assets/images/topScroll.png';
 
 
-const HomeContainer = () => {
+const Home = () => {
     const { rightPaginate, leftPaginate } = logos;
-    const gameOptions = useSelector((state) => state.gameSlice.gameOptions);
     const indexRef = useRef(0);
     const dispatch = useDispatch();
     const gameSlice = useSelector(gameSelector);
-    const { homeGamesArray, homeGamesArrayTotalLength, homeGamesArrayTitle, pending, showPopUp } = gameSlice;
+    const { homeGamesArray, homeGamesArrayTotalLength, homeGamesArrayTitle, pending, showPopUp, gameOptions } = gameSlice;
 
     /*
     the useEffect dispatches through the store a thunk request to get game information from the api.
@@ -29,7 +28,7 @@ const HomeContainer = () => {
         dispatch(getAllGames([gameOptions, { indexStart: 0 }]));
     }, [gameOptions, dispatch])
 
-    //The resetReffFatherHandler function  resets the current index so each new search will display the results from the beginning
+    //The resetReffFatherHandler function resets the current index so each new search will display the results from the beginning
 
     const resetReffFatherHandler = () => {
         indexRef.current = 0;
@@ -49,6 +48,7 @@ const HomeContainer = () => {
             return
         }
         indexRef.current = current;
+
         dispatch(getAllGames([gameOptions, { indexStart: current }]));
     }
 
@@ -89,4 +89,4 @@ const HomeContainer = () => {
         </>);
 };
 
-export default HomeContainer;
+export default Home;

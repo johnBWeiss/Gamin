@@ -3,12 +3,13 @@ import './SideNav.css'
 import logos from '../../assets/logos/logoController'
 import { gameByCategory, getAllGamesOptions } from '../../utils/axiosPaths';
 import { changeOptions } from '../../store/gameSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router'
 
 
 
 export const SideNav = (resetReff) => {
+    const stateOptions = useSelector(state => state.gameSlice.gameOptions)
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const { resetReffHandler } = resetReff
@@ -40,7 +41,9 @@ export const SideNav = (resetReff) => {
             dispatch(changeOptions(getAllGamesOptions))
         }
         else {
-            dispatch(changeOptions({ ...gameByCategory, params: { category: v.title } }))
+            if (stateOptions.params?.category !== v.title) {
+                dispatch(changeOptions({ ...gameByCategory, params: { category: v.title } }))
+            }
         }
     }
     return (

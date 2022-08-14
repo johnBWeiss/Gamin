@@ -2,8 +2,6 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import axios from 'axios';
 const initialState = {
-    error: false,
-    errorMessage: '',
     pending: false,
     showPopUp: false,
     popUpData: {},
@@ -26,13 +24,12 @@ export const getAllGames = createAsyncThunk('gameSlice/getAllGames',
 
     async ([options, { indexStart }], thunkAPI) => {
         try {
-
             let response = await axios(options)
             let shortenedResponse = response?.data?.slice(indexStart, indexStart + 8) ?? []
             let responseLength = response?.data?.length
-            return ({ data: shortenedResponse, dataLength: responseLength })
+            return ({ data: shortenedResponse, dataLength: responseLength, options })
         } catch (error) {
-
+            thunkAPI.dispatch(errorHandler())
         }
     })
 
@@ -43,15 +40,13 @@ export const gameSlice = createSlice({
 
     reducers: {
 
-        validationError: (state, action) => {
-            state.error = action.payload.error;
-            action.payload.errorMessage &&
-                (state.errorMessage = action.payload.errorMessage);
-            action.payload.errorType && (state.error = action.payload.errorType);
-            state.active = action.payload.active;
+        errorHandler: (state) => {
+            state.homeGamesArray = []
+            state.homeGamesArrayTitle = 'error'
+
+
         },
         changePopUpStatus: (state, action) => {
-
             state.showPopUp = !state.showPopUp
             state.popUpData = { ...action.payload }
         },
@@ -59,16 +54,12 @@ export const gameSlice = createSlice({
         changeOptions: (state, action) => {
             state.gameOptions = action.payload
             let dynamicTitle = 'All Games'
-
             if (action.payload?.params?.category) {
                 action.payload?.params?.category === 'martial-arts' ?
                     dynamicTitle = 'Fighting' : dynamicTitle = action.payload.params.category
             }
-
-            state.homeGamesArrayTitle =
-                dynamicTitle
+            state.homeGamesArrayTitle = dynamicTitle
         }
-
     },
 
     extraReducers: (builder) => {
@@ -80,6 +71,12 @@ export const gameSlice = createSlice({
                 state.pending = false
                 state.homeGamesArray = payload.data
                 state.homeGamesArrayTotalLength = payload.dataLength
+                state.gameOptions = payload.options
+            })
+            .addCase(getAllGames.rejected, (state) => {
+                state.homeGamesArray = []
+                state.homeGamesArrayTitle = 'error'
+
             })
 
     },
@@ -89,7 +86,7 @@ export const {
 
     validationError,
     changeOptions,
-    changePopUpStatus
+    changePopUpStatus, errorHandler
 
 } = gameSlice.actions;
 
