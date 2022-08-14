@@ -31,11 +31,7 @@ export const getAllGames = createAsyncThunk('gameSlice/getAllGames',
         } catch (error) {
             /*
              I use both the try catch method and the builder rejected method to catch errors,
-             because the rejected method does not cover all instances of errors. A bad internet connection for example
-            will never arrive at rejected, so it needs to be handled here.
-
-            I could catch all erorrs here if I wanted to by checking the return status, but I wanted to show that I know
-            how to use the extra reducer flow properly
+             because the rejected method does not cover all instances of errors. 
             */
             thunkAPI.dispatch(testErrorHandler())
         }
@@ -79,7 +75,7 @@ export const gameSlice = createSlice({
             })
             .addCase(getAllGames.rejected, (state) => {
                 state.homeGamesArray = []
-                state.homeGamesArrayTitle = 'test'
+                state.homeGamesArrayTitle = 'error'
 
             })
 
