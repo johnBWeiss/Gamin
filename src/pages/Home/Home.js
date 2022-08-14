@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useLayoutEffect } from 'react';
 import './Home.css';
 import HomeSingleItem from '../../components/HomeSingleItem/HomeSingleItem'
 
@@ -22,6 +22,13 @@ const HomeContainer = () => {
         return () => {
         }
     }, [gameOptions, dispatch])
+
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    useLayoutEffect(() => {
+
+        window.scrollTo(scrollX, scrollY);
+    });
 
 
     const gamesArray = useSelector((state) => state.gameSlice.homeGamesArray)
