@@ -16,7 +16,7 @@ const HomeSingleItem = (singleItem) => {
   let shortenedTitle = shorten(title, 19)
   let shortenedPublisher = shorten(publisher, 19)
 
-  // the PopUpHandler function updates the state so the popup will show, along with the correct data as the payload
+  // the PopUpHandler function updates the state so the popup will show, along with the correct data 
   const popUpHandler = () => {
     disptach(changePopUpStatus(data))
   }

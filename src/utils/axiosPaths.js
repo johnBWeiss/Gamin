@@ -8,8 +8,6 @@ export const getAllGamesOptions = {
     }
 };
 
-
-
 export const gameByCategory = {
     method: 'GET',
     url: 'https://free-to-play-games-database.p.rapidapi.com/api/games',

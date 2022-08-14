@@ -4,6 +4,7 @@ import './Pagination.css'
 
 const Pagination = (data) => {
 
+    //emits an event to the father component when clicked
     const childPagination = (operator) => {
         fatherPagination(operator)
     }

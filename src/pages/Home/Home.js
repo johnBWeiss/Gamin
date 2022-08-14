@@ -19,9 +19,9 @@ const Home = () => {
     const { homeGamesArray, homeGamesArrayTotalLength, homeGamesArrayTitle, pending, showPopUp, gameOptions } = gameSlice;
 
     /*
-    the useEffect dispatches through the store a thunk request to get game information from the api.
-    the gameOptions dependancy is there so thethe api call will happen again and rerender the page
-     if the user changes the category filter, but not if the user clicks on the same icon gaain
+    the useEffect dispatches via the gameSlice a thunk request to get game information from the api.
+    the gameOptions dependancy is there so the api call will happen again and rerender the page
+     if the user changes the category filter, but not if the user clicks on the same icon again
     */
 
     useEffect(() => {
@@ -34,8 +34,10 @@ const Home = () => {
         indexRef.current = 0;
     }
 
-    // The Pagination function updates the index, so the api reuest will return an array according to the correct index.
-    //the logic in the function ensures the user cannot send a new index update request if the index is either over or under the limit.
+    /* 
+    The Pagination function updates the index, so the api reuest will return an array according to the correct index.
+     the logic in the function ensures the user cannot send a new index update request if the index is either over or under the limit.
+ */
 
     const pagination = (operator) => {
         //true is pagination forward, false pagination back
@@ -83,8 +85,7 @@ const Home = () => {
                     {pending && <CustomSpinner />}
                 </div>
                 <SideNav resetReffHandler={resetReffFatherHandler} />
-            </div >
-            }
+            </div >}
             {showPopUp && <PopUp />}
         </>);
 };

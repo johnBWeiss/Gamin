@@ -8,6 +8,7 @@
   flex-direction: column;
   -ms-flex-pack: distribute;
   justify-content: space-around;
+  grid-gap: 2px;
   gap: 2px;
   text-align: left;
 }

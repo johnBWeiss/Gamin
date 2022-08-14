@@ -13,9 +13,7 @@ const App = () => {
       <img
         className='background'
         src={background}
-        alt='background'
-      />
-
+        alt='background' />
       <Router>
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
