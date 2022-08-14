@@ -25,7 +25,7 @@
   flex-direction: column;
   opacity: 1;
   transition: opacity 1s;
-  animation: fade 1.7s linear 0s 1 forwards;
+  animation: gradual 1.7s linear 0s 1 forwards;
 }
 
 .HomeInnerContainer {
@@ -34,6 +34,7 @@
   justify-content: center;
   align-items: center;
   width: calc(100vw - var(--sideBarWidth));
+  padding-bottom: 8%;
 }
 .HomeDynamicTitle {
   display: flex;
@@ -68,13 +69,12 @@
 }
 .paginationContainer {
   display: flex;
-  margin-top: 100px;
   height: 60px;
   width: 460px;
   justify-content: space-between;
   color: black;
   transition: color 0.2s;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .paginateButton {
@@ -91,10 +91,18 @@
   font-family: "Ailerons-Typeface", "AquireBold-8Ma60", Helvetica, Arial,
     sans-serif;
   color: white;
-  font-size: 40px;
+  font-size: 45px;
 }
 
-@keyframes fade {
+.topScroll {
+  height: 60px;
+  margin-top: 3%;
+}
+.topScroll:hover {
+  cursor: pointer;
+}
+
+@keyframes gradual {
   0% {
     opacity: 0;
     margin-top: 1%;
@@ -140,9 +148,6 @@
   }
 }
 @media (max-width: 766px) {
-  .indexCurrent {
-    font-size: 30px;
-  }
   .HomeInnerGrid {
     grid-template-columns: 300px;
   }
@@ -157,13 +162,20 @@
   }
   .paginateButton {
     height: 40px;
-    transition: 0.2s;
+  }
+
+  .indexCurrent {
+    font-size: 35px;
   }
   .HomeContainerGrid {
     margin-top: -15px;
   }
   .HomeDynamicTitle {
     font-size: 90px;
+  }
+
+  .HomeInnerGrid {
+    margin-top: 30px;
   }
 }
 
@@ -175,6 +187,9 @@
     font-size: 75px;
     margin-top: 50px;
   }
+  .topScroll {
+    height: 45px;
+  }
 }
 
 @media (max-width: 468px) {
@@ -185,7 +200,10 @@
     width: 255px;
   }
   .indexCurrent {
-    font-size: 26px;
+    font-size: 29px;
+  }
+  .topScroll {
+    height: 40px;
   }
 }
 
@@ -201,7 +219,7 @@
     width: 225px;
   }
   .indexCurrent {
-    font-size: 20px;
+    font-size: 26px;
   }
 }
 @media (max-width: 370px) {

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useLayoutEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Home.css';
 import HomeSingleItem from '../../components/HomeSingleItem/HomeSingleItem'
 
@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllGames, } from '../../store/gameSlice';
 import SideNav from '../../components/SideNav/SideNav';
 import logos from '../../assets/logos/logoController'
-// import robot from '../../assets/gifs/robot.avif'
 import gear from '../../assets/images/Gear.png'
+import topScroll from '../../assets/images/topScroll.png'
 
 
 
@@ -22,13 +22,6 @@ const HomeContainer = () => {
         return () => {
         }
     }, [gameOptions, dispatch])
-
-    const scrollX = window.scrollX;
-    const scrollY = window.scrollY;
-    useLayoutEffect(() => {
-
-        window.scrollTo(scrollX, scrollY);
-    });
 
 
     const gamesArray = useSelector((state) => state.gameSlice.homeGamesArray)
@@ -72,6 +65,13 @@ const HomeContainer = () => {
                         ))}
                     </div>}
                 </div>}
+                {!pending && <><div className='paginationContainer'>
+                    <img className='paginateButton' src={leftPaginate.src} alt={leftPaginate.title} onClick={() => { pagination(false) }} />
+                    <div className='indexCurrent'>{indexRef.current + 1}-{(totalLength < indexRef.current + 8) ? indexRef.current + totalLength - indexRef.current : indexRef.current + 8} / {totalLength}</div>
+                    <img className='paginateButton' src={rightPaginate.src} alt={rightPaginate.title} onClick={() => { pagination(true) }} />
+                </div>
+                    <img src={topScroll} className='topScroll' alt='scroll to top' title='Scroll to top' onClick={() => { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }) }} />
+                </>}
             </div>
             <SideNav resetReffHandler={resetReffFatherHandler} />
 
