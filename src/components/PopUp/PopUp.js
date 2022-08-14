@@ -5,11 +5,9 @@ import { changePopUpStatus } from '../../store/gameSlice'
 import { useDispatch, useSelector } from 'react-redux';
 
 
-export const PopUp = () => {
+const PopUp = () => {
 
-    const { back,
-        //  heart,
-        link } = logos
+    const { back, link } = logos
 
     const disptach = useDispatch()
     const popUpData = useSelector((state) => state.gameSlice.popUpData)
@@ -39,32 +37,22 @@ export const PopUp = () => {
                     </div>
                     <div className='popUpMiniFooterContainer'>
                         <div className='popUpMiniFooter'>
-
                             <img
                                 className='popUpLogo'
                                 src={back.src}
                                 alt="back"
                                 onClick={popUpHandler}
-                                title='Back to game search'
+                                title='Back to game search' />
 
-                            />
-                            {/* <img
-                    className='popUpLogo'
-                    src={heart.src}
-                    alt="heart"
-                  /> */}
-                            <a
-                                href={game_url}
+                            <a href={game_url}
                                 target='_blank'
                                 rel='noreferrer noopener'
-                                className='popUpLink'
-                            >
+                                className='popUpLink'>
                                 <img
                                     style={{ height: '100%' }}
                                     src={link.src}
                                     alt='link'
-                                    title='Link to game page'
-                                />
+                                    title='Link to game page' />
                             </a>
                         </div>
                     </div>
@@ -73,3 +61,5 @@ export const PopUp = () => {
         </div>
     )
 }
+
+export default PopUp

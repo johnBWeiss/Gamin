@@ -1,88 +1,92 @@
 import React, { useEffect, useRef } from 'react';
 import './Home.css';
-import HomeSingleItem from '../../components/HomeSingleItem/HomeSingleItem'
-
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllGames, } from '../../store/gameSlice';
+import { getAllGames, gameSelector } from '../../store/gameSlice';
+import HomeSingleItem from '../../components/HomeSingleItem/HomeSingleItem';
 import SideNav from '../../components/SideNav/SideNav';
-import logos from '../../assets/logos/logoController'
-import gear from '../../assets/images/Gear.png'
-import topScroll from '../../assets/images/topScroll.png'
-
-import { PopUp } from '../../components/PopUp/PopUp';
-
+import CustomSpinner from '../../components/Spinner/Spinner';
+import Pagination from '../../components/Pagination/Pagination';
+import logos from '../../assets/logos/logoController';
+import PopUp from '../../components/PopUp/PopUp';
+import topScroll from '../../assets/images/topScroll.png';
 
 
 const HomeContainer = () => {
-    const { rightPaginate, leftPaginate } = logos
-    const gameOptions = useSelector((state) => state.gameSlice.gameOptions)
-    const indexRef = useRef(0)
-    const dispatch = useDispatch()
+    const { rightPaginate, leftPaginate } = logos;
+    const gameOptions = useSelector((state) => state.gameSlice.gameOptions);
+    const indexRef = useRef(0);
+    const dispatch = useDispatch();
+    const gameSlice = useSelector(gameSelector);
+    const { homeGamesArray, homeGamesArrayTotalLength, homeGamesArrayTitle, pending, showPopUp } = gameSlice;
+
+    /*
+    the useEffect dispatches through the store a thunk request to get game information from the api.
+    the gameOptions dependancy is there so thethe api call will happen again and rerender the page
+     if the user changes the category filter, but not if the user clicks on the same icon gaain
+    */
 
     useEffect(() => {
-        dispatch(getAllGames([gameOptions, { indexStart: 0 }]))
-        return () => {
-        }
+        dispatch(getAllGames([gameOptions, { indexStart: 0 }]));
     }, [gameOptions, dispatch])
 
-
-    const gamesArray = useSelector((state) => state.gameSlice.homeGamesArray)
-    const totalLength = useSelector((state) => state.gameSlice.homeGamesArrayTotalLength)
-    const homeTitle = useSelector((state) => state.gameSlice.homeGamesArrayTitle)
-    const pending = useSelector((state) => state.gameSlice.pending)
-    const showPopUp = useSelector((state) => state.gameSlice.showPopUp)
+    //The resetReffFatherHandler function  resets the current index so each new search will display the results from the beginning
 
     const resetReffFatherHandler = () => {
-        indexRef.current = 0
+        indexRef.current = 0;
     }
 
+    // The Pagination function updates the index, so the api reuest will return an array according to the correct index.
+    //the logic in the function ensures the user cannot send a new index update request if the index is either over or under the limit.
+
     const pagination = (operator) => {
-        let current = operator ? indexRef.current + 8 : indexRef.current - 8
-        //check if it will return empty array because of max .
+        //true is pagination forward, false pagination back
+
+        let current = operator ? indexRef.current + 8 : indexRef.current - 8;
         current = current < 0 ? 0 : current;
-        if (current === indexRef.current || current >= totalLength) {// this condition being true means that the user tried to go over the boindsrirs of the result array. no need to dispatch in that case, so there is a return as not to waste compuation on unnesecarry dispatch
+
+        //this condition ensures there will be no api call if over or under the limit for the index
+        if (current === indexRef.current || current >= homeGamesArrayTotalLength) {
             return
         }
         indexRef.current = current;
-        dispatch(getAllGames([gameOptions, { indexStart: current }]))
+        dispatch(getAllGames([gameOptions, { indexStart: current }]));
     }
+
 
     return (
 
         <>
             {!showPopUp && <div className='HomeContainer'>
                 <div className='HomeInnerContainer'>
-                    <div className='HomeDynamicTitle'>{homeTitle}</div>
-                    {!pending && <div className='paginationContainer'>
-                        <img className='paginateButton' src={leftPaginate.src} alt={leftPaginate.title} onClick={() => { pagination(false) }} />
-                        <div className='indexCurrent'>{indexRef.current + 1}-{(totalLength < indexRef.current + 8) ? indexRef.current + totalLength - indexRef.current : indexRef.current + 8} / {totalLength}</div>
-                        <img className='paginateButton' src={rightPaginate.src} alt={rightPaginate.title} onClick={() => { pagination(true) }} />
-                    </div>}
-                    {pending && <img src={gear} alt={'spinner'} className='spinner' />}
-                    {!pending && <div className='HomeContainerGrid'>
-                        {gamesArray.length > 0 && <div
-                            className={'HomeInnerGrid'}>
-                            {gamesArray.map((v, i) => (
-                                <div className='singleItem'>
-                                    <HomeSingleItem key={v.id} data={v} />
-                                </div>
-                            ))}
-                        </div>}
-                    </div>}
-                    {!pending && <><div className='paginationContainer'>
-                        <img className='paginateButton' src={leftPaginate.src} alt={leftPaginate.title} onClick={() => { pagination(false) }} />
-                        <div className='indexCurrent'>{indexRef.current + 1}-{(totalLength < indexRef.current + 8) ? indexRef.current + totalLength - indexRef.current : indexRef.current + 8} / {totalLength}</div>
-                        <img className='paginateButton' src={rightPaginate.src} alt={rightPaginate.title} onClick={() => { pagination(true) }} />
+                    <div className='HomeDynamicTitle'>{homeGamesArrayTitle}
                     </div>
-                        <img src={topScroll} className='topScroll' alt='scroll to top' title='Scroll to top' onClick={() => { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }) }} />
-                    </>}
+                    {!pending &&
+                        <>
+                            <Pagination left={{ src: leftPaginate.src, title: leftPaginate.title }} right={{ src: rightPaginate.src, title: rightPaginate.title }}
+                                index={indexRef.current} gameArrayLength={homeGamesArrayTotalLength}
+                                fatherPagination={pagination} />
+                            <div className='HomeContainerGrid'>
+                                {homeGamesArray?.length > 0 && <div
+                                    className={'HomeInnerGrid'}>
+                                    {homeGamesArray?.map((v, i) => (
+                                        <div className='singleItem' key={v.id}>
+                                            <HomeSingleItem data={v} />
+                                        </div>
+                                    ))}
+                                </div>}
+                            </div>
+                            <Pagination left={{ src: leftPaginate.src, title: leftPaginate.title }} right={{ src: rightPaginate.src, title: rightPaginate.title }}
+                                index={indexRef.current} gameArrayLength={homeGamesArrayTotalLength}
+                                fatherPagination={pagination} />
+                            <img src={topScroll} className='topScroll' alt='scroll to top' title='Scroll to top' onClick={() => { window.scrollTo({ top: 0, left: 0, behavior: "smooth" }) }} />
+                        </>}
+                    {pending && <CustomSpinner />}
                 </div>
                 <SideNav resetReffHandler={resetReffFatherHandler} />
-
             </div >
             }
-            {showPopUp && <PopUp />
-            }        </>);
+            {showPopUp && <PopUp />}
+        </>);
 };
 
 export default HomeContainer;

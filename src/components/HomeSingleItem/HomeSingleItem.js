@@ -4,19 +4,24 @@ import { changePopUpStatus } from '../../store/gameSlice'
 import './HomeSingleItem.css';
 
 const HomeSingleItem = (singleItem) => {
+
+
   const { data } = singleItem
   const { title, thumbnail, release_date, publisher } = data
-
-
-  // TODO encapsulate to function tha recieves tring and how much to cut
-  let shortenedTitle = title?.substring(0, 16) ?? ''
-  shortenedTitle = title?.length >= 20 ? shortenedTitle + '...' : shortenedTitle
-
-  let shortenedPublisher = publisher?.substring(0, 28) ?? ''
-  shortenedPublisher = publisher?.length >= 28 ? shortenedPublisher + '...' : shortenedPublisher
-
   const disptach = useDispatch()
 
+
+  // the shorten function recives texts and slices them according to dynamic values.
+  const shorten = (text, limit) => {
+    let slicedText = text?.substring(0, limit) ?? ''
+    slicedText = text?.length >= limit ? slicedText + '...' : slicedText
+    return slicedText
+  }
+
+  let shortenedTitle = shorten(title, 19)
+  let shortenedPublisher = shorten(publisher, 19)
+
+  // the PopUpHandler function updates the state so the popup will show, along with the correct data as the payload
   const popUpHandler = () => {
     disptach(changePopUpStatus(data))
   }

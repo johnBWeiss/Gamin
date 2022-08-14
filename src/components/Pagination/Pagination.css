@@ -1,0 +1,47 @@
+.paginationContainer {
+  display: flex;
+  height: 60px;
+  width: 460px;
+  justify-content: space-between;
+  color: black;
+  transition: color 0.2s;
+  margin-bottom: 40px;
+}
+
+.paginateButton {
+  height: 60px;
+  transition: 0.2s;
+}
+
+.paginateButton:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 1030px) {
+  .paginationContainer {
+    width: 400px;
+  }
+}
+
+@media (max-width: 688px) {
+  .paginationContainer {
+    display: flex;
+    margin-top: 4%;
+    height: 40px;
+    width: 305px;
+  }
+  .paginateButton {
+    height: 40px;
+  }
+}
+@media (max-width: 468px) {
+  .paginationContainer {
+    width: 255px;
+  }
+}
+
+@media (max-width: 417px) {
+  .paginationContainer {
+    width: 225px;
+  }
+}

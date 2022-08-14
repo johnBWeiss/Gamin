@@ -93,4 +93,7 @@ export const {
 
 } = gameSlice.actions;
 
+export const gameSelector = (state) => { return state.gameSlice };
+
+
 export default gameSlice.reducer;

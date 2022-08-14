@@ -1,0 +1,19 @@
+.spinner {
+  height: 150px;
+  animation: spinnerRoll infinite 6s;
+}
+
+@keyframes spinnerRoll {
+  0% {
+  }
+  20% {
+    transform: rotate(1200deg);
+  }
+
+  40% {
+    transform: rotate(-1000deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

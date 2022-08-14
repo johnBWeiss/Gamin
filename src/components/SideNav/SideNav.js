@@ -11,21 +11,30 @@ import { useNavigate } from 'react-router'
 export const SideNav = (resetReff) => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
-
     const { resetReffHandler } = resetReff
     const { shooter, racing, strategy, sports, zombie, martialArts, home, controller } = logos
     const logoArray = [home, controller, shooter, strategy, racing, sports, zombie, martialArts]
 
+    /*
+     the dispatchCategoryHandler function is triggered by an icon being clicked in the SideNav component.
 
+     it then updates the thunk in the redux store/slice that pulls information from the api,
+     telling it which category of games to return, according to what was clicked.
 
-
+     there is one exceptions to this rule:
+     - if the home icon is clicked, the user is redirected to the homepage
+    */
     const dispatchCategoryHandler = (v) => {
+
+        /* 
+        The resetReffHandler function emits the event to its father component, ultimately 
+        resetting the current index of games so that it will always start from 0 with every new search.
+      */
         resetReffHandler()
 
         if (v.title === 'home') {
             navigate('/', { replace: true })
             return
-
         }
         if (v.title === 'All') {
             dispatch(changeOptions(getAllGamesOptions))
@@ -40,7 +49,7 @@ export const SideNav = (resetReff) => {
             <div className='SideNavInnerContainer'>
                 {logoArray.map((v, i) => (
                     <img
-                        onClick={() => { dispatchCategoryHandler(v); resetReff() }}
+                        onClick={() => { dispatchCategoryHandler(v) }}
                         key={v.title}
                         src={v.src}
                         alt='logo'

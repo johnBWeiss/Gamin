@@ -37,21 +37,10 @@
   transform: translateX(10%);
 }
 
-/* @media (max-width: 669px) {
-  .SideNavInnerContainer {
-    top: 50px;
-    left: calc(var(--sideBarWidth) - 45px);
-  }
-} */
 @media (max-width: 469px) {
   .SideNavLogo {
     width: 22px;
   }
-
-  /* .SideNavInnerContainer {
-    top: 50px;
-    left: calc(var(--sideBarWidth) - 41px);
-  } */
 }
 
 @media (max-height: 650px) {
