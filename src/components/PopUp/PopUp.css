@@ -16,8 +16,28 @@
   -ms-flex-align: center;
   align-items: center;
   font-family: "Libre Baskerville", serif;
+  -webkit-animation: grad 0.4s linear 0s 1 forwards;
+  animation: grad 0.4s linear 0s 1 forwards;
+}
+@-webkit-keyframes grad {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 1;
+  }
 }
 
+@keyframes grad {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 1;
+  }
+}
 .popUpImage {
   width: 75%;
   height: 75%;
