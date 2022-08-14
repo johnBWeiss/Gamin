@@ -70,7 +70,7 @@
   width: 100%;
   color: goldenrod;
   position: absolute;
-  bottom: 23%;
+  bottom: 21%;
   left: 0;
   right: 0;
 }
@@ -107,14 +107,16 @@
 }
 
 .popUpLogo {
-  height: 70%;
+  height: 50px;
+  width: 50px;
 }
-.popUpLogo:hover {
-  cursor: pointer;
+.popUpLink {
+  height: 50px;
+  width: 50px;
 }
 
-.popUpLink {
-  height: 70%;
+.popUpLogo:hover {
+  cursor: pointer;
 }
 .popUpLink:hover {
   cursor: pointer;
@@ -141,6 +143,14 @@
   }
   .popUpTitle {
     font-size: 1.6em;
+  }
+  .popUpLogo {
+    height: 40px;
+    width: 40px;
+  }
+  .popUpLink {
+    height: 40px;
+    width: 40px;
   }
 }
 @media (max-width: 450px) {
