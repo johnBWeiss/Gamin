@@ -29,7 +29,15 @@ export const getAllGames = createAsyncThunk('gameSlice/getAllGames',
             let responseLength = response?.data?.length
             return ({ data: shortenedResponse, dataLength: responseLength, options })
         } catch (error) {
-            thunkAPI.dispatch(errorHandler())
+            /*
+             I use both the try catch method and the builder rejected method to catch errors,
+             because the rejected method does not cover all instances of errors. A bad internet connection for example
+            will never arrive at rejected, so it needs to be handled here.
+
+            I could catch all erorrs here if I wanted to by checking the return status, but I wanted to show that I know
+            how to use the extra reducer flow properly
+            */
+            thunkAPI.dispatch(testErrorHandler())
         }
     })
 
@@ -37,20 +45,16 @@ export const getAllGames = createAsyncThunk('gameSlice/getAllGames',
 export const gameSlice = createSlice({
     name: 'gameSlice',
     initialState,
-
     reducers: {
 
         errorHandler: (state) => {
             state.homeGamesArray = []
             state.homeGamesArrayTitle = 'error'
-
-
         },
         changePopUpStatus: (state, action) => {
             state.showPopUp = !state.showPopUp
             state.popUpData = { ...action.payload }
         },
-
         changeOptions: (state, action) => {
             state.gameOptions = action.payload
             let dynamicTitle = 'All Games'
@@ -75,7 +79,7 @@ export const gameSlice = createSlice({
             })
             .addCase(getAllGames.rejected, (state) => {
                 state.homeGamesArray = []
-                state.homeGamesArrayTitle = 'error'
+                state.homeGamesArrayTitle = 'test'
 
             })
 
@@ -84,9 +88,10 @@ export const gameSlice = createSlice({
 
 export const {
 
-    validationError,
+    testErrorHandler,
     changeOptions,
-    changePopUpStatus, errorHandler
+    changePopUpStatus,
+    errorHandler
 
 } = gameSlice.actions;
 

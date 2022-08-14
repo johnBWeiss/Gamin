@@ -41,6 +41,7 @@ export const SideNav = (resetReff) => {
             dispatch(changeOptions(getAllGamesOptions))
         }
         else {
+            // this condition is to prevent calling the api again for the same category
             if (stateOptions.params?.category !== v.title) {
                 dispatch(changeOptions({ ...gameByCategory, params: { category: v.title } }))
             }
