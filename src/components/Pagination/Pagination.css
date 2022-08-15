@@ -25,13 +25,28 @@
   cursor: pointer;
 }
 
+.indexCurrent {
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  font-family: "Ailerons-Typeface", "AquireBold-8Ma60", Helvetica, Arial,
+    sans-serif;
+  color: white;
+  font-size: 45px;
+}
 @media (max-width: 1030px) {
   .paginationContainer {
     width: 400px;
   }
+  .indexCurrent {
+    font-size: 37px;
+  }
 }
 
 @media (max-width: 688px) {
+  .indexCurrent {
+    font-size: 29px;
+  }
   .paginationContainer {
     margin-top: 4%;
     height: 40px;
@@ -45,10 +60,16 @@
   .paginationContainer {
     width: 255px;
   }
+  .indexCurrent {
+    font-size: 22px;
+  }
 }
 
 @media (max-width: 417px) {
   .paginationContainer {
     width: 225px;
+  }
+  .indexCurrent {
+    font-size: 20px;
   }
 }
