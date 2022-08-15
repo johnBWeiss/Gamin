@@ -90,12 +90,24 @@
   }
 }
 
+@media (max-width: 766px) {
+  .itemTitleMore {
+    font-size: 32px;
+  }
+}
+
 @media (max-width: 669px) {
   .itemTitleMore {
-    font-size: 24px;
+    font-size: 28px;
   }
   .itemDetailsContainer {
     font-size: 22px;
+  }
+}
+
+@media (max-width: 551px) {
+  .itemTitleMore {
+    font-size: 23px;
   }
 }
 @media (max-width: 528px) {
@@ -110,8 +122,8 @@
   }
 }
 
-@media (max-width: 462px) {
-  .HomeSingleItemImage {
-    height: 160px;
+@media (max-width: 371px) {
+  .itemTitleMore {
+    font-size: 21px;
   }
 }
