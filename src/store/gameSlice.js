@@ -46,6 +46,7 @@ export const gameSlice = createSlice({
         errorHandler: (state) => {
             state.homeGamesArray = []
             state.homeGamesArrayTitle = 'error'
+            state.pending = true
         },
         changePopUpStatus: (state, { payload }) => {
             state.showPopUp = !state.showPopUp
@@ -76,6 +77,8 @@ export const gameSlice = createSlice({
             .addCase(getAllGames.rejected, (state) => {
                 state.homeGamesArray = []
                 state.homeGamesArrayTitle = 'error'
+                state.pending = true
+
 
             })
 
