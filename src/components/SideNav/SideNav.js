@@ -8,11 +8,10 @@ import { useNavigate } from 'react-router'
 
 
 
-export const SideNav = (resetReff) => {
+export const SideNav = ({ resetReffHandler }) => {
     const stateOptions = useSelector(state => state.gameSlice.gameOptions)
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const { resetReffHandler } = resetReff
     const { shooter, racing, strategy, sports, zombie, martialArts, home, controller } = logos
     const logoArray = [home, controller, shooter, strategy, racing, sports, zombie, martialArts]
 
