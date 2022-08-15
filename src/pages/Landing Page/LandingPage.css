@@ -144,7 +144,6 @@
 
   100% {
     border: 3px solid rgb(27, 0, 0);
-    opacity: 1;
   }
 }
 
@@ -242,7 +241,7 @@
   }
 
   .LandingPageButtonText {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .LandingPageButton {
@@ -311,7 +310,7 @@
   }
 
   .LandingPageButtonText {
-    font-size: 12.5px;
+    font-size: 14px;
   }
 
   .LandingPageButton {
@@ -331,6 +330,6 @@
   }
 
   .LandingPageButtonText {
-    font-size: 11px;
+    font-size: 13px;
   }
 }
