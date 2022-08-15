@@ -56,7 +56,7 @@ export const SideNav = (resetReff) => {
                         onClick={() => { dispatchCategoryHandler(v) }}
                         key={v.title}
                         src={v.src}
-                        alt='logo'
+                        alt={v.title}
                         title={v.title}
                         className='SideNavLogo'
                         style={v.title === 'home' ? { borderBottom: '2px solid white', paddingBottom: '10px' } : { borderBottom: 'none' }}

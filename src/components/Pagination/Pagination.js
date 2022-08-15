@@ -2,13 +2,12 @@ import React from 'react'
 import './Pagination.css'
 
 
-const Pagination = (data) => {
+const Pagination = ({ left, right, index, gameArrayLength, fatherPagination }) => {
 
-    //emits an event to the father component when clicked
+    //emits a click event declaring the direction for the pagination to the father component (true forward, false back)
     const childPagination = (operator) => {
         fatherPagination(operator)
     }
-    const { left, right, index, gameArrayLength, fatherPagination } = data
 
     return (
         <div className='paginationContainer'>

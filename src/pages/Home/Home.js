@@ -45,7 +45,7 @@ const Home = () => {
         let current = operator ? indexRef.current + 8 : indexRef.current - 8;
         current = current < 0 ? 0 : current;
 
-        //this condition ensures there will be no api call if over or under the limit for the index
+        //this condition ensures there will be no api call if equal to or over the limit for the index
         if (current === indexRef.current || current >= homeGamesArrayTotalLength) {
             return
         }

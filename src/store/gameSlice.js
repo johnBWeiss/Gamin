@@ -33,7 +33,7 @@ export const getAllGames = createAsyncThunk('gameSlice/getAllGames',
              I use both the try catch method and the builder rejected method to catch errors,
              because the rejected method does not cover all instances of errors. 
             */
-            thunkAPI.dispatch(testErrorHandler())
+            thunkAPI.dispatch(errorHandler())
         }
     })
 
@@ -47,16 +47,16 @@ export const gameSlice = createSlice({
             state.homeGamesArray = []
             state.homeGamesArrayTitle = 'error'
         },
-        changePopUpStatus: (state, action) => {
+        changePopUpStatus: (state, { payload }) => {
             state.showPopUp = !state.showPopUp
-            state.popUpData = { ...action.payload }
+            state.popUpData = { ...payload }
         },
-        changeOptions: (state, action) => {
-            state.gameOptions = action.payload
+        changeOptions: (state, { payload }) => {
+            state.gameOptions = payload
             let dynamicTitle = 'All Games'
-            if (action.payload?.params?.category) {
-                action.payload?.params?.category === 'martial-arts' ?
-                    dynamicTitle = 'Fighting' : dynamicTitle = action.payload.params.category
+            if (payload?.params?.category) {
+                payload?.params?.category === 'martial-arts' ?
+                    dynamicTitle = 'Fighting' : dynamicTitle = payload.params.category
             }
             state.homeGamesArrayTitle = dynamicTitle
         }
@@ -64,7 +64,7 @@ export const gameSlice = createSlice({
 
     extraReducers: (builder) => {
         builder
-            .addCase(getAllGames.pending, (state, action) => {
+            .addCase(getAllGames.pending, (state) => {
                 state.pending = true
             })
             .addCase(getAllGames.fulfilled, (state, { payload }) => {
@@ -84,7 +84,6 @@ export const gameSlice = createSlice({
 
 export const {
 
-    testErrorHandler,
     changeOptions,
     changePopUpStatus,
     errorHandler

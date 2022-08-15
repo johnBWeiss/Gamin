@@ -4,10 +4,9 @@ import { changePopUpStatus } from '../../store/gameSlice'
 import { shorten } from '../../utils/functions';
 import './HomeSingleItem.css';
 
-const HomeSingleItem = (singleItem) => {
+const HomeSingleItem = ({ data }) => {
 
 
-  const { data } = singleItem
   const { title, thumbnail, release_date, publisher } = data
   const disptach = useDispatch()
 
